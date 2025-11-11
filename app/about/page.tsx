@@ -1,105 +1,78 @@
 import { Metadata } from 'next';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import {
-  Hero,
-  Mission,
-  Values,
-  PortfolioModel,
-  GeographicFocus,
-  Vision,
-} from '@alset/ui/index';
+import { Hero } from '@alset/ui';
+import { Section } from '@alset/ui/molecules';
+import { Text } from '@alset/ui/atoms';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: 'About Us',
-  description: `Learn about ${siteConfig.name}'s mission, values, and approach to building a portfolio of technology-driven enterprises across multiple industries.`,
+  title: 'For the Love of Minnesota',
+  description: 'We were built here — where the winters are long, the people are steady, and doing things right still matters. Minnesota taught us that hard work is the first investment, and community is the greatest return.',
   path: '/about',
   keywords: [
-    'private investment firm Minnesota',
-    'business ownership technology company',
-    'building and managing portfolio enterprises',
     'Minnesota investment company',
-    'technology-driven investment',
+    'Minnesota private investment',
+    'Minnesota business investment',
+    'Minnesota entrepreneurs',
+    'Minnesota economic development',
   ],
 });
 
-const missionParagraphs = [
-  `At Alset, we believe the best businesses are built at the intersection of proven 
-  fundamentals and innovative thinking. Our mission is to identify, acquire, and grow 
-  companies that can benefit from strategic capital, operational expertise, and 
-  technology integration.`,
-  `We're not traditional investors who simply write checks and wait. We're builders who 
-  roll up our sleeves and work alongside management teams to unlock potential, streamline 
-  operations, and accelerate growth.`,
-];
+const manifestoSections = [
+  {
+    content: `We were built here — where the winters are long, the people are steady, and doing things right still matters.
 
-const values = [
-  {
-    title: 'Long-Term Thinking',
-    description: 'We measure success in years and decades, not quarters. Our patient capital approach allows companies to make decisions that create sustainable value.',
+Minnesota taught us that hard work is the first investment, and community is the greatest return.`,
   },
   {
-    title: 'Operational Excellence',
-    description: 'We believe great businesses are built on strong fundamentals. We focus on operations, processes, and systems that drive efficiency and quality.',
-  },
-  {
-    title: 'Technology Enablement',
-    description: "Modern technology isn't optional - it's essential. We help our companies leverage the right tools to compete and win in their markets.",
-  },
-  {
-    title: 'Partnership Mindset',
-    description: 'We succeed when our partners succeed. We build genuine relationships based on trust, transparency, and mutual respect.',
-  },
-  {
-    title: 'Continuous Learning',
-    description: 'Every company and industry teaches us something new. We stay curious, adaptable, and committed to growth.',
-  },
-  {
-    title: 'Community Impact',
-    description: "As a Minnesota-based firm, we're invested in our local economy and committed to creating opportunities in our community.",
-  },
-];
+    content: `At Alset Solutions, we believe in building things that last.
 
-const portfolioModelItems = [
-  {
-    title: 'Strategic Diversification',
-    description: `We intentionally build across multiple industries—real estate, home services, 
-    and healthcare. This diversification isn't just about risk 
-    management; it creates opportunities for cross-pollination of ideas, shared 
-    resources, and synergies between companies.`,
+Not just apps, or ads, or spreadsheets — but real businesses, owned by real people, doing real good.`,
   },
   {
-    title: 'Active Ownership',
-    description: `We're not passive investors. When we acquire a business, we become deeply involved 
-    in strategy, operations, and growth initiatives. Our team brings expertise in 
-    finance, technology, marketing, and operations to support our portfolio companies.`,
+    content: `We see a state full of quiet builders — small business owners, creators, and innovators who wake up every day to push their craft forward.
+
+They don't ask for handouts. They ask for clarity, strategy, and someone who believes in them.`,
   },
   {
-    title: 'Shared Infrastructure',
-    description: `Our portfolio companies benefit from shared services including technology 
-    infrastructure, financial systems, HR resources, and marketing capabilities. 
-    This centralized support allows management teams to focus on what they do best.`,
+    content: `That's why we exist.
+
+We bring the tools of tomorrow — capital, creativity, and code — to help local businesses thrive today.
+
+We invest where it matters most: in people, purpose, and potential.`,
+  },
+  {
+    content: `We are not here to follow trends.
+
+We are here to lead transformation — to help rebuild Minnesota's economic foundation from the inside out.
+
+To make our towns stronger, our entrepreneurs bolder, and our communities more connected.`,
+  },
+  {
+    content: `Because the future won't be built in boardrooms or Silicon Valley — it will be built right here.
+
+By those who choose to believe in something bigger than themselves.
+
+By those who plant roots, not just stakes.`,
+  },
+  {
+    content: `We are Alset Solutions — a private investment and technology company born from the heart of Minnesota.
+
+We're here to create value that lasts, opportunity that multiplies, and a future we can all be proud of.`,
+  },
+  {
+    content: `Build smarter. Invest deeper. Grow together.
+
+That's the Alset way.
+
+That's the Minnesota way.`,
   },
 ];
 
-const geographicFocusParagraphs = [
-  `While we evaluate opportunities nationally, we're proud to be based in Minnesota. 
-  Our state has a rich tradition of entrepreneurship, innovation, and business excellence. 
-  We're committed to contributing to this legacy by building companies that create jobs, 
-  serve customers exceptionally well, and strengthen our local economy.`,
-  `The Midwest work ethic—characterized by integrity, humility, and grit—informs 
-  everything we do.`,
-];
-
-const visionDescription = `We envision Alset as a portfolio of exceptional businesses that are leaders in their 
-respective markets, known for operational excellence, customer satisfaction, and 
-innovative thinking. We're building for the long term—creating companies that will 
-thrive for generations.`;
-
-export default function AboutPage() {
+export default function ManifestoPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: siteConfig.url },
-    { name: 'About Us', url: `${siteConfig.url}/about` },
+    { name: 'Manifesto', url: `${siteConfig.url}/about` },
   ]);
 
   return (
@@ -112,20 +85,28 @@ export default function AboutPage() {
       />
 
       <Hero
-        subtitle="About Alset"
-        title="Building the Future of Business"
-        description="Alset Solutions, Inc. is a Minnesota S-Corp and private investment firm combining strategic capital, creative thinking, and modern technology to build exceptional companies."
+        title="For the Love of Minnesota"
         className="pt-32 md:pt-40"
       />
-      <Mission paragraphs={missionParagraphs} />
-      <Values values={values} />
-      <PortfolioModel
-        subtitle="Diversified by design, unified by excellence"
-        items={portfolioModelItems}
-      />
-      <GeographicFocus paragraphs={geographicFocusParagraphs} />
-      <Vision description={visionDescription} />
+
+      <article>
+        {manifestoSections.map((section, index) => (
+          <Section
+            key={index}
+            spacing={index === 0 ? 'xl' : 'lg'}
+            className={index === 0 ? '' : 'pt-0'}
+            containerSize="md"
+          >
+            <Text
+              as="p"
+              variant="body"
+              className="text-lg md:text-xl leading-relaxed text-gray-700 whitespace-pre-line text-center max-w-4xl mx-auto"
+            >
+              {section.content}
+            </Text>
+          </Section>
+        ))}
+      </article>
     </>
   );
 }
-

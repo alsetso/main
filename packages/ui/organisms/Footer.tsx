@@ -3,113 +3,82 @@
 import Link from 'next/link';
 import { Container } from '../atoms/Container';
 import { Text } from '../atoms/Text';
-import { siteConfig } from '@alset/config/metadata';
 import { navigationLinks } from '@alset/config/routes';
+import { siteConfig } from '@alset/config/metadata';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-black text-white py-16 md:py-24">
-      <Container size="xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <Text as="h3" variant="subheading" className="text-white">
-                Alset
-              </Text>
-            </Link>
-            <Text variant="body" className="text-gray-400 max-w-md">
-              {siteConfig.tagline}
-            </Text>
-            <div className="mt-6 space-y-1">
-              <Text variant="caption" className="text-gray-500">
-                Alset Solutions, Inc. — Minnesota S-Corp
-              </Text>
-              <Text variant="caption" className="text-gray-500">
-                {siteConfig.location}
-              </Text>
-            </div>
-          </div>
-
-          {/* Navigation */}
+    <footer className="bg-white border-t border-gray-200 py-16 md:py-20">
+      <Container size="lg">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
           <div>
-            <Text as="h4" variant="body" className="font-semibold mb-4 text-white">
-              Navigation
+            <Text as="h3" variant="heading" className="text-2xl mb-2 text-black">
+              {siteConfig.name}
             </Text>
-            <ul className="space-y-3">
-              {navigationLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    href={link.path}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Industries */}
-          <div>
-            <Text as="h4" variant="body" className="font-semibold mb-4 text-white">
-              Industries
+            <Text variant="caption" className="text-gray-600">
+              A private investment and technology company based in Minnesota.
             </Text>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/minnesota/industries/real-estate"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Real Estate
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/minnesota/industries/home-services"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Home Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/minnesota/industries/artificial-intelligence"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Artificial Intelligence
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/minnesota/industries/marketing-advertising"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Marketing & Advertising
-                </Link>
-              </li>
-            </ul>
           </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Text variant="caption" className="text-gray-500">
-            © {currentYear} {siteConfig.name}. All rights reserved.
-          </Text>
-          <div className="flex items-center space-x-6">
-            <a
-              href={`mailto:${siteConfig.contact.email}`}
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+          
+          <nav className="flex flex-wrap gap-6 md:gap-8">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className="text-gray-600 hover:text-black transition-colors text-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/minnesota/industries"
+              className="text-gray-600 hover:text-black transition-colors text-sm"
             >
-              {siteConfig.contact.email}
-            </a>
+              Investments
+            </Link>
+            <Link
+              href="/contact"
+              className="text-gray-600 hover:text-black transition-colors text-sm"
+            >
+              Services
+            </Link>
+          </nav>
+        </div>
+        
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <Text variant="caption" className="text-gray-500 text-sm">
+            Copyright © {new Date().getFullYear()} {siteConfig.name}, Inc.
+          </Text>
+          <div className="flex space-x-6">
+            {siteConfig.social.twitter && (
+              <a
+                href={`https://twitter.com/${siteConfig.social.twitter.replace('@', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="Twitter"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            )}
+            {siteConfig.social.linkedin && (
+              <a
+                href={`https://linkedin.com/${siteConfig.social.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-gray-600 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            )}
           </div>
         </div>
       </Container>
     </footer>
   );
 }
-

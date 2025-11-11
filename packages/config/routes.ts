@@ -5,7 +5,7 @@ export const routes = {
   },
   about: {
     path: '/about',
-    label: 'About Us',
+    label: 'Manifesto',
   },
   contact: {
     path: '/contact',
