@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { generatePageMetadata, siteConfig } from '@config/metadata';
-import { generateBreadcrumbSchema } from '@config/structured-data';
-import { Section, Text, Card, Button } from '@ui/index';
+import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
+import { generateBreadcrumbSchema } from '@alset/config/structured-data';
+import { Section, Text, Card, Button } from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Investment Industries — Minnesota',

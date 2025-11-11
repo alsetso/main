@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import { generatePageMetadata, siteConfig } from '@config/metadata';
+import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import {
   Hero,
   ValueProposition,
   Industries,
   Approach,
   CallToAction,
-} from '@ui/index';
+} from '@alset/ui';
 
 export const metadata: Metadata = generatePageMetadata({
   title: `${siteConfig.name} — ${siteConfig.tagline}`,

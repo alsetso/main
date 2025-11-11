@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { siteConfig } from '@config/metadata';
+import { siteConfig } from '@alset/config/metadata';
 
 export default function robots(): MetadataRoute.Robots {
   return {

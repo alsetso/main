@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../atoms/Container';
 import { Text } from '../atoms/Text';
-import { staggerContainer, staggerItem } from '@motion/variants';
+import { staggerContainer, staggerItem } from '@alset/ui/motion/variants';
 
 export interface HeroProps {
   title: string;

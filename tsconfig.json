@@ -22,10 +22,12 @@
       "@/*": ["./app/*"],
       "@ui/*": ["./packages/ui/*"],
       "@config/*": ["./packages/config/*"],
-      "@motion/*": ["./packages/ui/motion/*"]
+      "@motion/*": ["./packages/ui/motion/*"],
+      "@alset/config/*": ["./packages/config/*"],
+      "@alset/ui/*": ["./packages/ui/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "packages/**/*.ts", "packages/**/*.tsx"],
   "exclude": ["node_modules"]
 }
 

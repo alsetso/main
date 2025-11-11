@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { Container } from '../atoms/Container';
 import { Text } from '../atoms/Text';
-import { siteConfig } from '@config/metadata';
-import { navigationLinks } from '@config/routes';
+import { siteConfig } from '@alset/config/metadata';
+import { navigationLinks } from '@alset/config/routes';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

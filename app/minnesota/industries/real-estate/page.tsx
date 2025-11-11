@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { generatePageMetadata, siteConfig } from '@config/metadata';
-import { generateBreadcrumbSchema, generateArticleSchema } from '@config/structured-data';
-import { Section, Text, Card } from '@ui/index';
+import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
+import { generateBreadcrumbSchema, generateArticleSchema } from '@alset/config/structured-data';
+import { Section, Text, Card } from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Real Estate Investment — Minnesota',

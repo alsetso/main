@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { generatePageMetadata, siteConfig } from '@config/metadata';
-import { Hero, Button } from '@ui/index';
+import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
+import { Hero, Button } from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Minnesota Investment Opportunities',

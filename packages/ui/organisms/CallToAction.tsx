@@ -2,7 +2,7 @@
 
 import { Section } from '../molecules/Section';
 import { Text } from '../atoms/Text';
-import { siteConfig } from '@config/metadata';
+import { siteConfig } from '@alset/config/metadata';
 
 export function CallToAction() {
   return (

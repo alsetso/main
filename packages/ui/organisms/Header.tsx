@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Container } from '../atoms/Container';
-import { navigationLinks } from '@config/routes';
+import { navigationLinks } from '@alset/config/routes';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);

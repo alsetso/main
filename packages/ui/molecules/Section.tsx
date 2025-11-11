@@ -2,7 +2,7 @@
 
 import { HTMLAttributes, ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { fadeInUp } from '@motion/variants';
+import { fadeInUp } from '@alset/ui/motion/variants';
 import { Container } from '../atoms/Container';
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {

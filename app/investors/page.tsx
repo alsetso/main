@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
-import { generatePageMetadata, siteConfig } from '@config/metadata';
-import { generateBreadcrumbSchema } from '@config/structured-data';
+import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
+import { generateBreadcrumbSchema } from '@alset/config/structured-data';
 import {
   Hero,
   InvestmentCriteria,
   InvestorBenefits,
   InvestmentProcess,
   CallToAction,
-} from '@ui/index';
+} from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Investors - Strategic Partnership Opportunities',

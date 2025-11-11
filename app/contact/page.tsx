@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import { generatePageMetadata, siteConfig } from '@config/metadata';
-import { generateBreadcrumbSchema, generateContactPageSchema } from '@config/structured-data';
+import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
+import { generateBreadcrumbSchema, generateContactPageSchema } from '@alset/config/structured-data';
 import {
   Hero,
   Section,
   Text,
   Card,
-} from '@ui/index';
+} from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Contact Us - Get in Touch',

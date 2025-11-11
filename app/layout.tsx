@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-import { defaultMetadata } from '@config/metadata';
-import { generateOrganizationSchema, generateWebsiteSchema, generateLocalBusinessSchema } from '@config/structured-data';
-import { Header, Footer } from '@ui/organisms';
+import { defaultMetadata } from '@alset/config/metadata';
+import { generateOrganizationSchema, generateWebsiteSchema, generateLocalBusinessSchema } from '@alset/config/structured-data';
+import { Header, Footer } from '@alset/ui/organisms';
 
 const inter = Inter({
   subsets: ['latin'],
