@@ -5,7 +5,6 @@ import { Hero } from '@alset/ui';
 import { Section } from '@alset/ui/molecules';
 import { Text, Button } from '@alset/ui/atoms';
 import { Container } from '@alset/ui/atoms';
-import { Card } from '@alset/ui/molecules';
 
 export const metadata: Metadata = generatePageMetadata({
   title: `${siteConfig.name} — Moving Minnesota Forward`,
@@ -209,56 +208,7 @@ where creativity and capital move in harmony.`}
         </Container>
       </Section>
 
-      {/* 7. Portfolio / Case Studies */}
-      <Section spacing="xl" className="bg-gray-50">
-        <Container size="lg">
-          <div className="text-center mb-16">
-            <Text as="h2" variant="heading" className="text-4xl md:text-5xl mb-4">
-              Proof of Concept → Proof of Growth
-            </Text>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8">
-              <Text as="h3" variant="subheading" className="mb-4">
-                Marketing Turnaround
-              </Text>
-              <Text variant="body" className="text-gray-600 mb-4">
-                A small-business marketing turnaround with measurable results.
-              </Text>
-              <Text variant="caption" className="text-sm text-gray-500">
-                Case Study →
-              </Text>
-            </Card>
-            
-            <Card className="p-8">
-              <Text as="h3" variant="subheading" className="mb-4">
-                Tech Buildout
-              </Text>
-              <Text variant="body" className="text-gray-600 mb-4">
-                A local tech buildout or automation system that transformed operations.
-              </Text>
-              <Text variant="caption" className="text-sm text-gray-500">
-                Case Study →
-              </Text>
-            </Card>
-            
-            <Card className="p-8">
-              <Text as="h3" variant="subheading" className="mb-4">
-                Investment Partnership
-              </Text>
-              <Text variant="body" className="text-gray-600 mb-4">
-                A regional investment or real estate partnership that created lasting value.
-              </Text>
-              <Text variant="caption" className="text-sm text-gray-500">
-                Case Study →
-              </Text>
-            </Card>
-          </div>
-        </Container>
-      </Section>
-
-      {/* 8. Testimonials / Trust */}
+      {/* 7. Testimonials / Trust */}
       <Section spacing="xl" className="bg-white">
         <Container size="md">
           <div className="space-y-12 max-w-4xl mx-auto">
