@@ -13,7 +13,9 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
-  webpack: (config) => {
+  // Ensure path aliases work in both build and runtime
+  webpack: (config, { isServer }) => {
+    // Resolve path aliases for webpack (used for some bundling)
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, './app'),
@@ -21,7 +23,15 @@ const nextConfig = {
       '@config': path.resolve(__dirname, './packages/config'),
       '@motion': path.resolve(__dirname, './packages/ui/motion'),
     };
+    
+    // Ensure workspace packages are resolved correctly
+    config.resolve.symlinks = true;
+    
     return config;
+  },
+  // Ensure TypeScript path aliases are used by Next.js
+  typescript: {
+    // Let Next.js handle type checking
   },
 }
 
