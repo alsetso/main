@@ -39,9 +39,9 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Link href="/minnesota/industries">
+            <Link href="/about">
               <Button variant="primary" size="lg" className="min-w-[200px]">
-                Explore Our Work
+                Our Manifesto
               </Button>
             </Link>
             <Link href="/contact">
