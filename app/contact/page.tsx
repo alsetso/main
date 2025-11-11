@@ -131,10 +131,10 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <Text as="h2" variant="heading">
-              What We're Looking For
+              What We&apos;re Looking For
             </Text>
             <Text variant="body" className="text-gray-600 text-xl mt-4">
-              We're actively seeking opportunities across our focus industries
+              We&apos;re actively seeking opportunities across our focus industries
             </Text>
           </div>
 

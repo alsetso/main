@@ -69,7 +69,7 @@ export default function IndustriesPage() {
               Our Investment Industries
             </Text>
             <Text variant="subheading" className="text-gray-600 max-w-2xl mx-auto font-normal">
-              We focus on industries with proven track records of high returns and strong growth potential in Minnesota's private market.
+              We focus on industries with proven track records of high returns and strong growth potential in Minnesota&apos;s private market.
             </Text>
           </header>
         

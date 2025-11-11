@@ -119,7 +119,7 @@ export default function MarketingAdvertisingPage() {
                 Marketing and advertising businesses provide essential services to companies across all industries. With strong recurring revenue from billboard leases, retainer-based agency relationships, and ongoing campaign management, these businesses offer stable cash flow and growth opportunities through market expansion and service diversification.
               </Text>
               <Text variant="body" className="text-gray-700 text-center max-w-2xl mx-auto">
-                We focus on marketing and advertising companies with prime asset locations, established client relationships, and proven track records of delivering results. Our investment strategy helps these businesses expand their service offerings, improve operational efficiency, and capture additional market share in Minnesota's growing economy.
+                We focus on marketing and advertising companies with prime asset locations, established client relationships, and proven track records of delivering results. Our investment strategy helps these businesses expand their service offerings, improve operational efficiency, and capture additional market share in Minnesota&apos;s growing economy.
               </Text>
             </Card>
           </section>

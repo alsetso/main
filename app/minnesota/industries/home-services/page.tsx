@@ -86,7 +86,7 @@ export default function HomeServicesPage() {
               Home Service Businesses Investment
             </Text>
             <Text variant="subheading" className="text-gray-600 max-w-2xl mx-auto font-normal">
-              Essential service providers that deliver consistent demand, recurring revenue, and strong margins in Minnesota's residential and commercial markets.
+              Essential service providers that deliver consistent demand, recurring revenue, and strong margins in Minnesota&apos;s residential and commercial markets.
             </Text>
           </header>
 
