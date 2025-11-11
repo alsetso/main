@@ -7,14 +7,6 @@ export const routes = {
     path: '/about',
     label: 'About Us',
   },
-  portfolio: {
-    path: '/portfolio',
-    label: 'Portfolio',
-  },
-  investors: {
-    path: '/investors',
-    label: 'Investors',
-  },
   contact: {
     path: '/contact',
     label: 'Contact',
@@ -38,8 +30,6 @@ export function getRoute(key: RouteKey): string {
 export const navigationLinks = [
   routes.home,
   routes.about,
-  routes.portfolio,
-  routes.investors,
   routes.contact,
 ] as const;
 
