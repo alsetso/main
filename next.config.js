@@ -38,6 +38,16 @@ const nextConfig = {
       'node_modules',
     ];
     
+    // Ensure extensions are resolved correctly
+    config.resolve.extensions = [
+      '.js',
+      '.jsx',
+      '.ts',
+      '.tsx',
+      '.json',
+      ...(config.resolve.extensions || []),
+    ];
+    
     return config;
   },
 }
