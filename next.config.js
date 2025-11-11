@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,6 +12,16 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['framer-motion'],
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, './app'),
+      '@ui': path.resolve(__dirname, './packages/ui'),
+      '@config': path.resolve(__dirname, './packages/config'),
+      '@motion': path.resolve(__dirname, './packages/ui/motion'),
+    };
+    return config;
   },
 }
 
