@@ -26,7 +26,7 @@ export default function HomePage() {
       <section className="min-h-screen flex items-center justify-center bg-white px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto text-center space-y-12 py-32">
           <Text as="h1" variant="display" className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-8">
-            Building the Future,<br />Right Here in Minnesota.
+            Moving Minnesota Forward
           </Text>
           
           <div className="space-y-6 max-w-3xl mx-auto">
