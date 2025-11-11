@@ -8,7 +8,7 @@ import { Container } from '@alset/ui/atoms';
 import { Card } from '@alset/ui/molecules';
 
 export const metadata: Metadata = generatePageMetadata({
-  title: `${siteConfig.name} — Building the Future, Right Here in Minnesota`,
+  title: `${siteConfig.name} — Moving Minnesota Forward`,
   description: 'We\'re a private investment and technology company that helps small businesses grow through capital, creativity, and code. We believe innovation begins with people — and that Minnesota\'s builders deserve tools built for them.',
   path: '/',
   keywords: [
