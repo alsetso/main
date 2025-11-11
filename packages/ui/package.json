@@ -6,10 +6,14 @@
   "types": "./index.ts",
   "exports": {
     ".": "./index.ts",
+    "./index": "./index.ts",
     "./atoms": "./atoms/index.ts",
     "./molecules": "./molecules/index.ts",
     "./organisms": "./organisms/index.ts",
-    "./motion": "./motion/index.ts"
+    "./motion": "./motion/index.ts",
+    "./motion/variants": "./motion/variants.ts",
+    "./motion/transitions": "./motion/transitions.ts",
+    "./motion/hooks": "./motion/hooks.ts"
   }
 }
 
