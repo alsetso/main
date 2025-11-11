@@ -6,13 +6,12 @@ import { Section, Text, Card, Button } from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Investment Industries — Minnesota',
-  description: 'Discover Alset\'s focus industries for high-value private firm investments in Minnesota: real estate, home services, artificial intelligence, and marketing & advertising. Explore investment opportunities across these sectors.',
+  description: 'Discover Alset\'s focus industries for high-value private firm investments in Minnesota: real estate, home services, and marketing & advertising. Explore investment opportunities across these sectors.',
   path: '/minnesota/industries',
   keywords: [
     'Minnesota investment industries',
     'real estate investment Minnesota',
     'home services investment',
-    'AI investment Minnesota',
     'marketing advertising investment',
     'private investment firm Minnesota',
     'business investment opportunities',
@@ -32,12 +31,6 @@ const industries = [
     description: 'Essential service providers including roofing, HVAC, electrical, plumbing, and other high-demand trades.',
     href: '/minnesota/industries/home-services',
     categories: ['Roofing', 'HVAC', 'Electrical', 'Plumbing'],
-  },
-  {
-    title: 'Artificial Intelligence',
-    description: 'Cutting-edge AI companies developing software, code, intellectual property, and robotics solutions.',
-    href: '/minnesota/industries/artificial-intelligence',
-    categories: ['Software', 'Code & IP', 'Robotics'],
   },
   {
     title: 'Marketing & Advertising',

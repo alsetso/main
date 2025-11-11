@@ -64,7 +64,7 @@ const portfolioModelItems = [
   {
     title: 'Strategic Diversification',
     description: `We intentionally build across multiple industries—real estate, home services, 
-    healthcare, robotics, and software. This diversification isn't just about risk 
+    and healthcare. This diversification isn't just about risk 
     management; it creates opportunities for cross-pollination of ideas, shared 
     resources, and synergies between companies.`,
   },

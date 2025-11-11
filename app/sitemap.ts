@@ -45,12 +45,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
-      url: `${baseUrl}/minnesota/industries/artificial-intelligence`,
-      lastModified: monthlyDate,
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
-    {
       url: `${baseUrl}/minnesota/industries/marketing-advertising`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
