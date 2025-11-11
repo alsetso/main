@@ -16,22 +16,29 @@ const nextConfig = {
   // Ensure path aliases work in both build and runtime
   webpack: (config, { isServer }) => {
     // Resolve path aliases for webpack (used for some bundling)
-    config.resolve.alias = {
-      ...config.resolve.alias,
+    const aliases = {
       '@': path.resolve(__dirname, './app'),
       '@ui': path.resolve(__dirname, './packages/ui'),
       '@config': path.resolve(__dirname, './packages/config'),
       '@motion': path.resolve(__dirname, './packages/ui/motion'),
     };
     
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      ...aliases,
+    };
+    
     // Ensure workspace packages are resolved correctly
     config.resolve.symlinks = true;
     
+    // Ensure modules are resolved from project root
+    config.resolve.modules = [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'packages'),
+      'node_modules',
+    ];
+    
     return config;
-  },
-  // Ensure TypeScript path aliases are used by Next.js
-  typescript: {
-    // Let Next.js handle type checking
   },
 }
 
