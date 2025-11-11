@@ -5,7 +5,7 @@ import { Hero, Button } from '@alset/ui/index';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Minnesota Investment Opportunities',
-  description: 'Explore high-value investment opportunities across real estate, home services, and marketing & advertising in Minnesota.',
+  description: 'Explore high-value investment opportunities across real estate and home services in Minnesota.',
   path: '/minnesota',
   keywords: [
     'Minnesota investments',
