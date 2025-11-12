@@ -60,7 +60,7 @@ export function ServiceHero({ title, description, service }: ServiceHeroProps) {
             }}
             className="flex items-center justify-center mb-6 md:mb-8"
           >
-            {config.type === 'triangle' && (
+            {config.type === 'triangle' && 'clipPath' in config && (
               <div
                 className={`${config.size} ${config.className}`}
                 style={{
@@ -74,7 +74,7 @@ export function ServiceHero({ title, description, service }: ServiceHeroProps) {
             {config.type === 'circle' && (
               <div className={`${config.size} ${config.className} rounded-full`} />
             )}
-            {config.type === 'diamond' && (
+            {config.type === 'diamond' && 'clipPath' in config && (
               <div
                 className={`${config.size} ${config.className}`}
                 style={{
@@ -82,7 +82,7 @@ export function ServiceHero({ title, description, service }: ServiceHeroProps) {
                 }}
               />
             )}
-            {config.type === 'plus' && (
+            {config.type === 'plus' && 'clipPath' in config && (
               <div
                 className={`${config.size} ${config.className} relative`}
                 style={{
