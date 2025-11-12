@@ -47,69 +47,6 @@ export default function HomeServicesPage() {
           </div>
         </section>
 
-        {/* Why Home Services - Investment Thesis */}
-        <Section spacing="xl" className="bg-gray-50">
-          <Container size="md">
-            <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
-                Why Home Services?
-              </Text>
-              <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                These essential services maintain consistent demand regardless of economic conditions. High customer retention, strong margins, and recurring revenue streams create stable, predictable returns.
-              </Text>
-            </div>
-          </Container>
-        </Section>
-
-        {/* What We Acquire */}
-        <Section spacing="xl" className="bg-white">
-          <Container size="lg">
-            <div className="text-center mb-16">
-              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
-                What We Acquire
-              </Text>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              <div className="space-y-4">
-                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
-                  Roofing
-                </Text>
-                <Text variant="body" className="text-gray-700 leading-relaxed">
-                  Residential and commercial roofing contractors with established customer bases and recurring maintenance contracts.
-                </Text>
-              </div>
-              
-              <div className="space-y-4">
-                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
-                  HVAC
-                </Text>
-                <Text variant="body" className="text-gray-700 leading-relaxed">
-                  Heating, ventilation, and air conditioning service providers with seasonal agreements and emergency service capabilities.
-                </Text>
-              </div>
-              
-              <div className="space-y-4">
-                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
-                  Electrical
-                </Text>
-                <Text variant="body" className="text-gray-700 leading-relaxed">
-                  Licensed electrical contractors handling residential, commercial, and smart home integration projects.
-                </Text>
-              </div>
-              
-              <div className="space-y-4">
-                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
-                  Plumbing & Other Trades
-                </Text>
-                <Text variant="body" className="text-gray-700 leading-relaxed">
-                  Essential plumbing services and complementary trades serving critical homeowner and commercial needs.
-                </Text>
-              </div>
-            </div>
-          </Container>
-        </Section>
-
         {/* Dual Audience Sections */}
         <Section spacing="xl" className="bg-gray-50">
           <Container size="lg">
@@ -210,6 +147,69 @@ export default function HomeServicesPage() {
                     </Button>
                   </Link>
                 </div>
+              </div>
+            </div>
+          </Container>
+        </Section>
+
+        {/* Why Home Services - Investment Thesis */}
+        <Section spacing="xl" className="bg-gray-50">
+          <Container size="md">
+            <div className="text-center space-y-6 max-w-3xl mx-auto">
+              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
+                Why Home Services?
+              </Text>
+              <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                These essential services maintain consistent demand regardless of economic conditions. High customer retention, strong margins, and recurring revenue streams create stable, predictable returns.
+              </Text>
+            </div>
+          </Container>
+        </Section>
+
+        {/* What We Acquire */}
+        <Section spacing="xl" className="bg-white">
+          <Container size="lg">
+            <div className="text-center mb-16">
+              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
+                What We Acquire
+              </Text>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  Roofing
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Residential and commercial roofing contractors with established customer bases and recurring maintenance contracts.
+                </Text>
+              </div>
+              
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  HVAC
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Heating, ventilation, and air conditioning service providers with seasonal agreements and emergency service capabilities.
+                </Text>
+              </div>
+              
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  Electrical
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Licensed electrical contractors handling residential, commercial, and smart home integration projects.
+                </Text>
+              </div>
+              
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  Plumbing & Other Trades
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Essential plumbing services and complementary trades serving critical homeowner and commercial needs.
+                </Text>
               </div>
             </div>
           </Container>
