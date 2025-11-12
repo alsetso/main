@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { generatePageMetadata } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { Section, Text, Card } from '@alset/ui/index';
+import { Section, Text, Button } from '@alset/ui/index';
+import { Container } from '@alset/ui/atoms';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Home Service Businesses Investment — Minnesota',
@@ -14,54 +16,8 @@ export const metadata: Metadata = generatePageMetadata({
     'electrical contractor investment',
     'Minnesota trades investment',
     'plumbing business investment',
-    'home service acquisition',
-    'contractor investment Minnesota',
-    'trades business investment',
   ],
 });
-
-const serviceCategories = [
-  {
-    title: 'Roofing',
-    description: 'Residential and commercial roofing contractors with established customer bases and recurring revenue streams.',
-    valueDrivers: [
-      'Recurring maintenance contracts',
-      'Storm damage repair opportunities',
-      'Strong local market presence',
-      'Skilled workforce retention',
-    ],
-  },
-  {
-    title: 'HVAC',
-    description: 'Heating, ventilation, and air conditioning service providers serving residential and commercial markets.',
-    valueDrivers: [
-      'Seasonal service agreements',
-      'Installation and replacement revenue',
-      'Emergency service premium pricing',
-      'Technology integration opportunities',
-    ],
-  },
-  {
-    title: 'Electrical',
-    description: 'Licensed electrical contractors handling residential, commercial, and industrial projects.',
-    valueDrivers: [
-      'New construction and renovation work',
-      'Electrical panel upgrades',
-      'Smart home integration services',
-      'Commercial maintenance contracts',
-    ],
-  },
-  {
-    title: 'Plumbing & Other Trades',
-    description: 'Essential plumbing services and complementary trades that serve critical homeowner needs.',
-    valueDrivers: [
-      'Emergency service calls',
-      'Preventive maintenance programs',
-      'Bathroom and kitchen remodels',
-      'Water heater and appliance installation',
-    ],
-  },
-];
 
 export default function HomeServicesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -80,62 +36,159 @@ export default function HomeServicesPage() {
         }}
       />
       <article>
-        <Section spacing="xl" className="pt-32 md:pt-40" containerSize="lg">
-          <header className="text-center mb-16 max-w-4xl mx-auto">
-            <Text as="h1" variant="display" className="mb-6">
-              Home Service Businesses Investment
+        {/* Hero Section */}
+        <section className="min-h-[60vh] flex items-center justify-center bg-white px-6 md:px-12 lg:px-24 pt-32 md:pt-40">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Text as="h1" variant="display" className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none mb-6">
+              Home Service Businesses
             </Text>
-            <Text variant="subheading" className="text-gray-600 max-w-2xl mx-auto font-normal">
-              Essential service providers that deliver consistent demand, recurring revenue, and strong margins in Minnesota&apos;s residential and commercial markets.
+            <Text variant="body" className="text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Essential services that deliver consistent demand, recurring revenue, and strong margins.
             </Text>
-          </header>
+          </div>
+        </section>
 
-          <section className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {serviceCategories.map((category, index) => (
-                <Card key={index} className="p-8">
-                  <Text as="h2" variant="heading" className="mb-4">
-                    {category.title}
-                  </Text>
-                  <Text variant="body" className="text-gray-600 mb-6">
-                    {category.description}
-                  </Text>
-                  <div className="space-y-3">
-                    <Text as="h3" variant="subheading" className="text-sm font-semibold uppercase tracking-wider text-gray-500 mb-3">
-                      Value Drivers
-                    </Text>
-                    <ul className="space-y-2">
-                      {category.valueDrivers.map((driver, driverIndex) => (
-                        <li key={driverIndex} className="flex items-start">
-                          <span className="text-black mr-2">•</span>
-                          <Text variant="body" className="text-gray-700">
-                            {driver}
-                          </Text>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          <section>
-            <Card className="p-8 bg-gray-50 max-w-4xl mx-auto">
-              <Text as="h2" variant="heading" className="mb-4 text-center">
+        {/* Why Home Services */}
+        <Section spacing="xl" className="bg-gray-50">
+          <Container size="md">
+            <div className="text-center space-y-6 max-w-3xl mx-auto">
+              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
                 Why Home Services?
               </Text>
-              <Text variant="body" className="text-gray-700 text-center max-w-2xl mx-auto mb-6">
-                Home service businesses offer recession-resistant demand, high customer retention, and opportunities for operational improvement through technology, marketing, and process optimization. These essential services maintain strong margins and recurring revenue streams.
+              <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                Recession-resistant demand. High customer retention. Strong margins. These essential services maintain consistent revenue streams regardless of economic conditions.
               </Text>
-              <Text variant="body" className="text-gray-700 text-center max-w-2xl mx-auto">
-                We target established home service companies with proven track records, loyal customer bases, and opportunities for growth through strategic investments in technology, marketing, and operational efficiency. Our approach helps these businesses scale while maintaining the quality and service that built their reputation.
+            </div>
+          </Container>
+        </Section>
+
+        {/* What We Invest In */}
+        <Section spacing="xl" className="bg-white">
+          <Container size="lg">
+            <div className="text-center mb-16">
+              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
+                What We Invest In
               </Text>
-            </Card>
-          </section>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  Roofing
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Residential and commercial roofing contractors with established customer bases and recurring maintenance contracts.
+                </Text>
+              </div>
+              
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  HVAC
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Heating, ventilation, and air conditioning service providers with seasonal agreements and emergency service capabilities.
+                </Text>
+              </div>
+              
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  Electrical
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Licensed electrical contractors handling residential, commercial, and smart home integration projects.
+                </Text>
+              </div>
+              
+              <div className="space-y-4">
+                <Text as="h3" variant="subheading" className="text-2xl md:text-3xl">
+                  Plumbing & Other Trades
+                </Text>
+                <Text variant="body" className="text-gray-700 leading-relaxed">
+                  Essential plumbing services and complementary trades serving critical homeowner and commercial needs.
+                </Text>
+              </div>
+            </div>
+          </Container>
+        </Section>
+
+        {/* What We Look For */}
+        <Section spacing="xl" className="bg-gray-50">
+          <Container size="md">
+            <div className="max-w-3xl mx-auto space-y-8">
+              <div className="text-center">
+                <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
+                  What We Look For
+                </Text>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <Text as="h3" variant="subheading" className="text-xl mb-2">
+                    Established Track Record
+                  </Text>
+                  <Text variant="body" className="text-gray-700">
+                    Proven businesses with loyal customer bases and consistent revenue.
+                  </Text>
+                </div>
+                
+                <div>
+                  <Text as="h3" variant="subheading" className="text-xl mb-2">
+                    Growth Potential
+                  </Text>
+                  <Text variant="body" className="text-gray-700">
+                    Opportunities to scale through technology, marketing, and operational improvements.
+                  </Text>
+                </div>
+                
+                <div>
+                  <Text as="h3" variant="subheading" className="text-xl mb-2">
+                    Strong Fundamentals
+                  </Text>
+                  <Text variant="body" className="text-gray-700">
+                    Healthy margins, recurring revenue streams, and a reputation for quality service.
+                  </Text>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </Section>
+
+        {/* How We Help */}
+        <Section spacing="xl" className="bg-white">
+          <Container size="md">
+            <div className="max-w-3xl mx-auto space-y-8">
+              <div className="text-center">
+                <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
+                  How We Help
+                </Text>
+              </div>
+              
+              <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
+                We bring capital, technology, and operational expertise to help established home service businesses scale while maintaining the quality and service that built their reputation.
+              </Text>
+            </div>
+          </Container>
+        </Section>
+
+        {/* Call to Action */}
+        <Section spacing="xl" className="bg-gray-50">
+          <Container size="md">
+            <div className="text-center space-y-8 max-w-2xl mx-auto">
+              <Text as="h2" variant="heading" className="text-3xl md:text-4xl mb-4">
+                Have a Business to Discuss?
+              </Text>
+              <Text variant="body" className="text-lg text-gray-700 leading-relaxed">
+                We&apos;re always looking for established home service businesses with strong fundamentals and growth potential.
+              </Text>
+              <Link href="/contact">
+                <Button variant="primary" size="lg" className="min-w-[200px]">
+                  Start a Conversation
+                </Button>
+              </Link>
+            </div>
+          </Container>
         </Section>
       </article>
     </>
   );
 }
-
