@@ -4,11 +4,15 @@
   "private": true,
   "main": "./index.ts",
   "types": "./index.ts",
+  "dependencies": {
+    "@supabase/ssr": "^0.7.0"
+  },
   "exports": {
     ".": "./index.ts",
     "./metadata": "./metadata.ts",
     "./structured-data": "./structured-data.ts",
-    "./routes": "./routes.ts"
+    "./routes": "./routes.ts",
+    "./supabase": "./supabase.ts"
   }
 }
 

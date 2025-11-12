@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { Hero } from '@alset/ui';
+import { AlsetShapesBackground } from '@alset/ui';
 import { Section } from '@alset/ui/molecules';
 import { Text, Container } from '@alset/ui/atoms';
 
@@ -54,26 +54,18 @@ export default function ManifestoPage() {
         }}
       />
 
-      <Hero
-        title="For the Love of Minnesota"
-        className="pt-32 md:pt-40"
+      <AlsetShapesBackground 
+        headline="Alset Manifesto"
+        subtitle="For the Love of Minnesota"
       />
 
       {/* The Alset Manifesto Section */}
       <Section spacing="xl" className="bg-white">
         <Container size="md">
-          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <span className="text-2xl sm:text-3xl md:text-4xl" aria-hidden="true">
-                {manifestoIntro.emoji}
-              </span>
-              <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
-                {manifestoIntro.title}
-              </Text>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-6">
             <Text
               variant="body"
-              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed whitespace-pre-line"
+              className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed whitespace-pre-line"
             >
               {manifestoIntro.content}
             </Text>

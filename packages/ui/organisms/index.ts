@@ -15,4 +15,7 @@ export * from './InvestmentCriteria';
 export * from './InvestorBenefits';
 export * from './InvestmentProcess';
 export * from './HowItWorks';
+export * from './AlsetShapesBackground';
+export * from './MiniAlsetShapesLogo';
+export * from './ServiceHero';
 

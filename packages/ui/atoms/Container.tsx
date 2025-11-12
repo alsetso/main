@@ -22,7 +22,7 @@ export function Container({
 
   return (
     <div 
-      className={`mx-auto px-6 md:px-8 lg:px-12 ${sizes[size]} ${className}`}
+      className={`mx-auto px-4 sm:px-6 md:px-8 lg:px-12 w-full max-w-full ${sizes[size]} ${className}`}
       {...props}
     >
       {children}

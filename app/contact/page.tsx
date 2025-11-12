@@ -141,7 +141,7 @@ export default function ContactPage() {
       <Section spacing="xl" className="bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl">
+            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl break-words overflow-wrap-anywhere px-2">
               What We&apos;re Looking For
             </Text>
             <Text variant="body" className="text-gray-600 text-base sm:text-lg md:text-xl mt-3 sm:mt-4">
@@ -167,7 +167,7 @@ export default function ContactPage() {
       <Section spacing="xl">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center space-y-4 sm:space-y-6">
-            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl">
+            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl break-words overflow-wrap-anywhere px-2">
               Next Steps
             </Text>
             <Text variant="body" className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">

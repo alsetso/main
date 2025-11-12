@@ -20,25 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/services`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/invest`,
-      lastModified: monthlyDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/get-started`,
-      lastModified: monthlyDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/growth`,
-      lastModified: monthlyDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/opportunities`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -48,6 +36,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: monthlyDate,
       changeFrequency: 'yearly',
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/assessment`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/lending`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/scale`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/equity`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/transition`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
   ];
 }

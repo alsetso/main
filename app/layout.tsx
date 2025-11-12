@@ -51,12 +51,14 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased bg-white text-gray-900">
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+      <body className="antialiased bg-white text-gray-900 overflow-x-hidden">
+        <div className="w-full max-w-full overflow-x-hidden">
+          <Header />
+          <main className="main-content min-h-screen w-full max-w-full">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

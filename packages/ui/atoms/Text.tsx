@@ -17,11 +17,11 @@ export function Text({
   const Component = as;
   
   const variants = {
-    display: 'text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none',
-    heading: 'text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight',
-    subheading: 'text-2xl md:text-3xl lg:text-4xl font-semibold',
-    body: 'text-base md:text-lg leading-relaxed',
-    caption: 'text-sm md:text-base text-gray-600',
+    display: 'text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight',
+    heading: 'text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight',
+    subheading: 'text-xl md:text-2xl lg:text-3xl font-medium tracking-tight',
+    body: 'text-base md:text-lg leading-relaxed font-normal',
+    caption: 'text-sm md:text-base text-gray-600 font-normal',
   };
 
   return (

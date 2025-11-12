@@ -30,7 +30,7 @@ export function Section({
 
   const content = (
     <section 
-      className={`${spacings[spacing]} ${className}`}
+      className={`${spacings[spacing]} ${className} w-full max-w-full overflow-x-hidden`}
       {...props}
     >
       <Container size={containerSize}>

@@ -16,7 +16,7 @@ export interface HeroProps {
 
 export function Hero({ title, subtitle, description, children, className = '' }: HeroProps) {
   return (
-    <section className={`relative min-h-[80vh] flex items-center justify-center ${className}`}>
+    <section className={`relative min-h-[80vh] flex items-center justify-center w-full max-w-full overflow-x-hidden ${className}`}>
       <Container size="lg">
         <motion.div
           variants={staggerContainer}
@@ -33,7 +33,7 @@ export function Hero({ title, subtitle, description, children, className = '' }:
           )}
           
           <motion.div variants={staggerItem}>
-            <Text as="h1" variant="display" className="mb-6">
+            <Text as="h1" variant="display" className="mb-6 break-words overflow-wrap-anywhere px-2">
               {title}
             </Text>
           </motion.div>

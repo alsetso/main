@@ -7,8 +7,8 @@ import { Container } from '../atoms/Container';
 
 const investmentOfferings = [
   {
-    title: 'Equity investments & acquisitions',
-    description: 'We acquire equity positions in small to mid-size businesses, building a portfolio of companies with strong growth potential.',
+    title: 'Equity investments & assessments',
+    description: 'We assess equity positions in small to mid-size businesses, building a portfolio of companies with strong growth potential.',
   },
   {
     title: 'Portfolio company equity',
@@ -16,7 +16,7 @@ const investmentOfferings = [
   },
   {
     title: 'Private investment capital pool',
-    description: 'Our private investment firm deploys capital from our dedicated fund to acquire and build businesses.',
+    description: 'Our private investment firm deploys capital from our dedicated fund to assess and build businesses.',
   },
   {
     title: 'Strategic partnerships',
@@ -66,7 +66,7 @@ export function HowItWorks() {
                 Private Investment Firm
               </Text>
               <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                We build and acquire small to mid-size businesses, taking equity positions in portfolio companies through our private investment firm&apos;s capital pool.
+                We build and assess small to mid-size businesses, taking equity positions in portfolio companies through our private investment firm&apos;s capital pool.
               </Text>
               <Text variant="body" className="text-lg text-gray-600 leading-relaxed italic">
                 Our investment philosophy is simple: build long-term value through strategy, structure, and stewardship — not speculation.
@@ -123,7 +123,7 @@ export function HowItWorks() {
               Our Investment Approach
             </Text>
             <Text variant="body" className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We focus on acquiring equity in small to mid-size businesses across various industries. Through our private investment firm&apos;s capital pool, we build a portfolio of companies where we can add value through capital, strategy, and operational support.
+              We focus on assessing equity in small to mid-size businesses across various industries. Through our private investment firm&apos;s capital pool, we build a portfolio of companies where we can add value through capital, strategy, and operational support.
             </Text>
           </div>
         </div>
