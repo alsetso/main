@@ -103,30 +103,30 @@ export default function ContactPage() {
       />
 
       <Section spacing="xl">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
             {contactMethods.map((method, index) => (
-              <Card key={index} className="p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 text-gray-400">
+              <Card key={index} className="p-5 sm:p-6 md:p-8">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="flex-shrink-0 text-gray-400 w-6 h-6 sm:w-7 sm:h-7">
                     {method.icon}
                   </div>
-                  <div className="flex-1">
-                    <Text as="h3" variant="subheading" className="text-xl mb-2">
+                  <div className="flex-1 min-w-0">
+                    <Text as="h3" variant="subheading" className="text-lg sm:text-xl mb-2">
                       {method.title}
                     </Text>
-                    <Text variant="body" className="text-gray-600 mb-3">
+                    <Text variant="body" className="text-sm sm:text-base text-gray-600 mb-3">
                       {method.description}
                     </Text>
                     {method.link ? (
                       <a
                         href={method.link}
-                        className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                        className="text-sm sm:text-base text-blue-600 hover:text-blue-700 font-medium transition-colors break-all"
                       >
                         {method.value}
                       </a>
                     ) : (
-                      <Text variant="body" className="font-medium">
+                      <Text variant="body" className="text-sm sm:text-base font-medium">
                         {method.value}
                       </Text>
                     )}
@@ -139,23 +139,23 @@ export default function ContactPage() {
       </Section>
 
       <Section spacing="xl" className="bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <Text as="h2" variant="heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl">
               What We&apos;re Looking For
             </Text>
-            <Text variant="body" className="text-gray-600 text-xl mt-4">
+            <Text variant="body" className="text-gray-600 text-base sm:text-lg md:text-xl mt-3 sm:mt-4">
               We&apos;re actively seeking opportunities across our focus industries
             </Text>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {inquiryTypes.map((inquiry, index) => (
-              <Card key={index} className="p-8">
-                <Text as="h3" variant="subheading" className="text-xl mb-3">
+              <Card key={index} className="p-5 sm:p-6 md:p-8">
+                <Text as="h3" variant="subheading" className="text-lg sm:text-xl mb-2 sm:mb-3">
                   {inquiry.title}
                 </Text>
-                <Text variant="body" className="text-gray-600 leading-relaxed">
+                <Text variant="body" className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   {inquiry.description}
                 </Text>
               </Card>
@@ -165,22 +165,22 @@ export default function ContactPage() {
       </Section>
 
       <Section spacing="xl">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-6">
-            <Text as="h2" variant="heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center space-y-4 sm:space-y-6">
+            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl">
               Next Steps
             </Text>
-            <Text variant="body" className="text-gray-600 text-lg leading-relaxed">
+            <Text variant="body" className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
               Reach out to us at{' '}
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                className="text-blue-600 hover:text-blue-700 font-medium transition-colors break-all"
               >
                 {siteConfig.contact.email}
               </a>
               {' '}to start a conversation. We typically respond within 24-48 hours and are happy to schedule a call to discuss your business, our approach, and how we might work together.
             </Text>
-            <Text variant="body" className="text-gray-600 text-lg leading-relaxed">
+            <Text variant="body" className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
               For investment opportunities, please include information about your company, industry, revenue, and what you&apos;re looking for in a partner. All inquiries are treated with complete confidentiality.
             </Text>
           </div>

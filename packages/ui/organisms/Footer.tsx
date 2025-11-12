@@ -3,19 +3,41 @@
 import Link from 'next/link';
 import { Container } from '../atoms/Container';
 import { Text } from '../atoms/Text';
-import { navigationLinks } from '@alset/config/routes';
+import { Button } from '../atoms/Button';
+import { navigationLinks, routes } from '@alset/config/routes';
 import { siteConfig } from '@alset/config/metadata';
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-gray-800 py-16 md:py-20">
-      <Container size="lg">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+    <footer className="bg-black">
+      {/* CTA Section */}
+      <div className="w-full bg-black border-t border-gray-800 py-12 md:py-16">
+        <Container size="lg">
+          <div className="text-center">
+            <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+              Ready to Invest?
+            </Text>
+            <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              Join the Capital Pool and participate in opportunities.
+            </Text>
+            <Link href={routes.invest.path}>
+              <Button variant="secondary" size="lg" className="text-base sm:text-lg md:text-xl font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl">
+                Join the Capital Pool
+              </Button>
+            </Link>
+          </div>
+        </Container>
+      </div>
+
+      {/* Footer Content */}
+      <div className="border-t border-gray-800 py-16 md:py-20">
+        <Container size="lg">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
           <div>
             <Text as="h3" variant="heading" className="text-2xl mb-2 text-white">
               Alset
             </Text>
-            <Text variant="caption" className="text-gray-400">
+            <Text variant="caption" className="text-gray-300">
               A private investment and technology company based in Minnesota.
             </Text>
           </div>
@@ -25,7 +47,7 @@ export function Footer() {
               <Link
                 key={link.path}
                 href={link.path}
-                className="text-gray-400 hover:text-white transition-colors text-sm"
+                className="text-gray-300 hover:text-white transition-colors text-sm"
               >
                 {link.label}
               </Link>
@@ -34,7 +56,7 @@ export function Footer() {
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <Text variant="caption" className="text-gray-500 text-sm">
+          <Text variant="caption" className="text-gray-400 text-sm">
             Copyright © {new Date().getFullYear()} Alset Solutions, Inc.
           </Text>
           <div className="flex space-x-6">
@@ -43,7 +65,7 @@ export function Footer() {
                 href={`https://twitter.com/${siteConfig.social.twitter.replace('@', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-gray-300 transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +78,7 @@ export function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-gray-300 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,7 +88,8 @@ export function Footer() {
             )}
           </div>
         </div>
-      </Container>
+        </Container>
+      </div>
     </footer>
   );
 }

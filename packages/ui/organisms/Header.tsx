@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '../atoms/Container';
 import { Button } from '../atoms/Button';
 import { navigationLinks, routes } from '@alset/config/routes';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,18 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <motion.header
@@ -84,21 +97,113 @@ export function Header() {
                 {routes.invest.label}
               </Button>
             </Link>
-            <button className="p-2 text-gray-900" aria-label="Menu">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-gray-900 relative z-[60]"
+              aria-label="Menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <div className="relative w-6 h-6">
+                <motion.svg
+                  className="absolute inset-0 w-6 h-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  initial={false}
+                  animate={mobileMenuOpen ? { opacity: 0, rotate: 90 } : { opacity: 1, rotate: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </motion.svg>
+                <motion.svg
+                  className="absolute inset-0 w-6 h-6"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  initial={false}
+                  animate={mobileMenuOpen ? { opacity: 1, rotate: 0 } : { opacity: 0, rotate: -90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <path d="M6 18L18 6M6 6l12 12" />
+                </motion.svg>
+              </div>
             </button>
           </div>
         </nav>
+
+        {/* Mobile menu sidebar */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              
+              {/* Sidebar panel */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl z-50 md:hidden flex flex-col"
+              >
+                {/* Sidebar header */}
+                <div className="flex items-center p-6 border-b border-gray-200">
+                  <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+                </div>
+
+                {/* Navigation links */}
+                <nav className="flex-1 overflow-y-auto py-6 px-6">
+                  <div className="space-y-1">
+                    {navigationLinks.map((link, index) => (
+                      <motion.div
+                        key={link.path}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 + 0.1, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      >
+                        <Link
+                          href={link.path}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block text-lg font-medium text-gray-900 hover:text-gray-700 py-4 px-4 rounded-xl hover:bg-gray-50 transition-all"
+                        >
+                          {link.label}
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </nav>
+
+                {/* Sidebar footer CTA */}
+                <div className="p-6 border-t border-gray-200 space-y-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: navigationLinks.length * 0.05 + 0.2, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link href={routes.invest.path} onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="primary" size="lg" className="w-full text-base font-semibold py-4 rounded-xl">
+                        {routes.invest.label}
+                      </Button>
+                    </Link>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </Container>
     </motion.header>
   );

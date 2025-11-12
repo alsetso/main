@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { generatePageMetadata } from '@alset/config/metadata';
 import { Text, Button } from '@alset/ui/atoms';
 import { Section } from '@alset/ui/molecules';
-import { Container } from '@alset/ui/atoms';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Investment Opportunities — Alset Solutions',
@@ -33,106 +32,106 @@ export default function InvestPage() {
   return (
     <>
       <Section spacing="xl" className="pt-32 md:pt-40 bg-white">
-        <Container size="lg">
-          <div className="max-w-6xl mx-auto space-y-12 px-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="space-y-6 sm:space-y-8 md:space-y-10">
             {/* Header */}
-            <div className="text-center space-y-6">
-              <Text as="h1" variant="display" className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
+            <div className="text-center space-y-3 sm:space-y-4">
+              <Text as="h1" variant="display" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
                 Investment Opportunities
               </Text>
-              <Text variant="body" className="text-lg sm:text-xl md:text-2xl text-gray-700 font-medium max-w-3xl mx-auto">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-700 font-medium max-w-3xl mx-auto">
                 Current investment opportunities in Minnesota home service businesses.
               </Text>
             </div>
 
             {/* Opportunity Cards */}
-            <div className="grid gap-6 sm:gap-8">
+            <div className="grid gap-4 sm:gap-5 md:gap-6">
               {opportunities.map((opportunity, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-lg transition-shadow">
-                  <div className="space-y-6">
+                <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 sm:p-5 md:p-6 hover:border-gray-300 transition-colors">
+                  <div className="space-y-3 sm:space-y-4 md:space-y-5">
                     <div>
-                      <Text variant="body" className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                      <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1.5 sm:mb-2">
                         {opportunity.title}
                       </Text>
-                      <Text variant="body" className="text-base sm:text-lg text-gray-600">
+                      <Text variant="body" className="text-sm sm:text-base md:text-lg text-gray-600">
                         {opportunity.location}
                       </Text>
                     </div>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                      <div className="bg-gray-50 rounded-xl p-4">
-                        <Text variant="body" className="text-xs sm:text-sm text-gray-600 font-medium mb-1">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+                      <div className="bg-gray-50 rounded-lg p-2.5 sm:p-3">
+                        <Text variant="body" className="text-xs text-gray-600 font-medium mb-0.5">
                           Deal Size
                         </Text>
-                        <Text variant="body" className="text-lg sm:text-xl font-bold text-gray-900">
+                        <Text variant="body" className="text-base sm:text-lg md:text-xl font-bold text-gray-900">
                           {opportunity.dealSize}
                         </Text>
                       </div>
                       
-                      <div className="bg-gray-50 rounded-xl p-4">
-                        <Text variant="body" className="text-xs sm:text-sm text-gray-600 font-medium mb-1">
+                      <div className="bg-gray-50 rounded-lg p-2.5 sm:p-3">
+                        <Text variant="body" className="text-xs text-gray-600 font-medium mb-0.5">
                           Investment Range
                         </Text>
-                        <Text variant="body" className="text-lg sm:text-xl font-bold text-gray-900">
+                        <Text variant="body" className="text-base sm:text-lg md:text-xl font-bold text-gray-900">
                           {opportunity.investmentRange}
                         </Text>
                       </div>
                       
-                      <div className="bg-gray-50 rounded-xl p-4">
-                        <Text variant="body" className="text-xs sm:text-sm text-gray-600 font-medium mb-1">
+                      <div className="bg-gray-50 rounded-lg p-2.5 sm:p-3">
+                        <Text variant="body" className="text-xs text-gray-600 font-medium mb-0.5">
                           Projected ROI
                         </Text>
-                        <Text variant="body" className="text-lg sm:text-xl font-bold text-gray-900">
+                        <Text variant="body" className="text-base sm:text-lg md:text-xl font-bold text-gray-900">
                           {opportunity.projectedROI}
                         </Text>
                       </div>
                       
-                      <div className="bg-blue-50 rounded-xl p-4">
-                        <Text variant="body" className="text-xs sm:text-sm text-blue-700 font-medium mb-1">
+                      <div className="bg-blue-50 rounded-lg p-2.5 sm:p-3">
+                        <Text variant="body" className="text-xs text-blue-700 font-medium mb-0.5">
                           Deal Type
                         </Text>
-                        <Text variant="body" className="text-sm sm:text-base font-semibold text-blue-900">
+                        <Text variant="body" className="text-xs sm:text-sm md:text-base font-semibold text-blue-900">
                           {opportunity.dealType}
                         </Text>
                       </div>
                     </div>
 
                     {/* Revenue & Growth Projections */}
-                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-6 sm:p-8 border-2 border-gray-200">
-                      <Text variant="body" className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
+                    <div className="bg-gray-50 rounded-lg p-3 sm:p-4 md:p-5 border border-gray-200">
+                      <Text variant="body" className="text-sm sm:text-base md:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                         Revenue & Growth Projections
                       </Text>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
                         <div>
-                          <Text variant="body" className="text-xs sm:text-sm text-gray-600 font-medium mb-1">
+                          <Text variant="body" className="text-xs text-gray-600 font-medium mb-0.5">
                             2026 Revenue (Est.)
                           </Text>
-                          <Text variant="body" className="text-xl sm:text-2xl font-bold text-gray-900">
+                          <Text variant="body" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                             $4M
                           </Text>
                         </div>
                         <div>
-                          <Text variant="body" className="text-xs sm:text-sm text-gray-600 font-medium mb-1">
+                          <Text variant="body" className="text-xs text-gray-600 font-medium mb-0.5">
                             2026 Net Earnings
                           </Text>
-                          <Text variant="body" className="text-xl sm:text-2xl font-bold text-gray-900">
+                          <Text variant="body" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                             $400K
                           </Text>
                         </div>
                         <div>
-                          <Text variant="body" className="text-xs sm:text-sm text-gray-600 font-medium mb-1">
+                          <Text variant="body" className="text-xs text-gray-600 font-medium mb-0.5">
                             2030 Projected Revenue
                           </Text>
-                          <Text variant="body" className="text-xl sm:text-2xl font-bold text-gray-900">
+                          <Text variant="body" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                             $8M
                           </Text>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="pt-4">
+                    <div className="pt-2 sm:pt-3">
                       <Link href={opportunity.href}>
-                        <Button variant="primary" size="lg" className="w-full sm:w-auto text-base sm:text-lg font-semibold py-4 px-8 rounded-xl">
+                        <Button variant="primary" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg font-semibold py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg">
                           View Full Details
                         </Button>
                       </Link>
@@ -142,7 +141,7 @@ export default function InvestPage() {
               ))}
             </div>
           </div>
-        </Container>
+        </div>
       </Section>
     </>
   );

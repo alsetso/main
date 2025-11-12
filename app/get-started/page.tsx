@@ -44,74 +44,74 @@ export default function GetStartedPage() {
 
       <Section spacing="xl" className="bg-white">
         <Container size="lg">
-          <div className="max-w-4xl mx-auto space-y-8 sm:space-y-12 px-4">
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-12">
             {/* Introduction */}
-            <div className="space-y-6">
-              <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+            <div className="space-y-4 sm:space-y-6">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 If you&apos;ve built a good business in Minnesota, you know what it took — long days, lean years, and a lot of pride.
               </Text>
-              <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 Now, you might be ready for something more: new growth, new systems, or maybe even a well-deserved transition.
               </Text>
             </div>
 
             {/* That's where Alset comes in */}
-            <div className="space-y-4">
-              <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+            <div className="space-y-3 sm:space-y-4">
+              <Text variant="body" className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
                 That&apos;s where Alset Solutions comes in.
               </Text>
-              <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 We&apos;re a Minnesota-based private investment firm that partners directly with local business owners.
               </Text>
-              <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 We bring capital, structure, and growth strategy — not to change who you are, but to help your business reach its next level.
               </Text>
             </div>
 
             {/* Path Selection */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div className="text-center">
-                <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <Text variant="body" className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
                   Where are you in your journey?
                 </Text>
-                <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
                   Every business owner is at a different stage. We work with you exactly where you are — no pressure, no assumptions.
                 </Text>
               </div>
 
               {/* Two Paths */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-12">
                 {/* Path 1: Strategic Partnership */}
-                <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 border-2 border-gray-200 hover:border-gray-900 transition-all">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
-                        <span className="text-gray-900 font-bold text-lg">1</span>
+                <div className="bg-white rounded-2xl shadow-md p-5 sm:p-6 md:p-8 border-2 border-gray-200 hover:border-gray-900 transition-all">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-gray-900 font-bold text-base sm:text-lg">1</span>
                       </div>
-                      <Text variant="body" className="text-xl sm:text-2xl font-bold text-gray-900">
+                      <Text variant="body" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                         Strategic Partnership
                       </Text>
                     </div>
-                    <Text variant="body" className="text-sm sm:text-base text-gray-600 font-medium">
+                    <Text variant="body" className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
                       You want a partner to help grow, but you&apos;re not ready to exit.
                     </Text>
-                    <div className="space-y-2 pt-2">
-                      <Text variant="body" className="text-sm text-gray-700">
+                    <div className="space-y-1.5 sm:space-y-2 pt-2">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Capital injection for growth
                       </Text>
-                      <Text variant="body" className="text-sm text-gray-700">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Shared ownership structure
                       </Text>
-                      <Text variant="body" className="text-sm text-gray-700">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Strategic guidance and support
                       </Text>
-                      <Text variant="body" className="text-sm text-gray-700">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ You maintain control
                       </Text>
                     </div>
-                    <div className="pt-4">
+                    <div className="pt-3 sm:pt-4">
                       <Link href="/contact" className="block">
-                        <Button variant="secondary" size="md" className="w-full text-sm sm:text-base font-semibold py-3 rounded-xl">
+                        <Button variant="secondary" size="md" className="w-full text-xs sm:text-sm md:text-base font-semibold py-2.5 sm:py-3 rounded-xl">
                           Discuss Partnership
                         </Button>
                       </Link>
@@ -120,36 +120,36 @@ export default function GetStartedPage() {
                 </div>
 
                 {/* Path 3: Full Exit */}
-                <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 border-2 border-gray-200 hover:border-gray-900 transition-all">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center">
-                        <span className="text-gray-900 font-bold text-lg">2</span>
+                <div className="bg-white rounded-2xl shadow-md p-5 sm:p-6 md:p-8 border-2 border-gray-200 hover:border-gray-900 transition-all">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-gray-900 font-bold text-base sm:text-lg">2</span>
                       </div>
-                      <Text variant="body" className="text-xl sm:text-2xl font-bold text-gray-900">
+                      <Text variant="body" className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
                         Full Exit
                       </Text>
                     </div>
-                    <Text variant="body" className="text-sm sm:text-base text-gray-600 font-medium">
+                    <Text variant="body" className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
                       You&apos;re ready to sell and transition to your next chapter.
                     </Text>
-                    <div className="space-y-2 pt-2">
-                      <Text variant="body" className="text-sm text-gray-700">
+                    <div className="space-y-1.5 sm:space-y-2 pt-2">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Fair market valuation
                       </Text>
-                      <Text variant="body" className="text-sm text-gray-700">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Local, trusted buyer
                       </Text>
-                      <Text variant="body" className="text-sm text-gray-700">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Smooth transition
                       </Text>
-                      <Text variant="body" className="text-sm text-gray-700">
+                      <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                         ✓ Business stays in Minnesota
                       </Text>
                     </div>
-                    <div className="pt-4">
+                    <div className="pt-3 sm:pt-4">
                       <Link href="/contact" className="block">
-                        <Button variant="secondary" size="md" className="w-full text-sm sm:text-base font-semibold py-3 rounded-xl">
+                        <Button variant="secondary" size="md" className="w-full text-xs sm:text-sm md:text-base font-semibold py-2.5 sm:py-3 rounded-xl">
                           Explore Sale
                         </Button>
                       </Link>
@@ -159,30 +159,30 @@ export default function GetStartedPage() {
               </div>
 
               {/* Growth Services Note */}
-              <div className="bg-blue-50 rounded-2xl p-6 sm:p-8 text-center mt-8">
-                <Text variant="body" className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+              <div className="bg-blue-50 rounded-2xl p-5 sm:p-6 md:p-8 text-center mt-6 sm:mt-8">
+                <Text variant="body" className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 mb-2">
                   Looking for Growth Services Instead?
                 </Text>
-                <Text variant="body" className="text-sm sm:text-base text-gray-700 mb-4">
+                <Text variant="body" className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4">
                   If you want branding, online advertising, or sales funnel optimization without giving up ownership, check out our Growth Services.
                 </Text>
                 <Link href="/growth">
-                  <Button variant="secondary" size="md" className="text-sm sm:text-base font-semibold py-3 px-6 rounded-xl">
+                  <Button variant="secondary" size="md" className="text-xs sm:text-sm md:text-base font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl w-full sm:w-auto">
                     Explore Growth Services
                   </Button>
                 </Link>
               </div>
 
               {/* Not Sure Section */}
-              <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 text-center mt-8">
-                <Text variant="body" className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+              <div className="bg-gray-50 rounded-2xl p-5 sm:p-6 md:p-8 text-center mt-6 sm:mt-8">
+                <Text variant="body" className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 mb-2">
                   Not sure which path is right for you?
                 </Text>
-                <Text variant="body" className="text-sm sm:text-base text-gray-700 mb-4">
+                <Text variant="body" className="text-xs sm:text-sm md:text-base text-gray-700 mb-3 sm:mb-4">
                   That&apos;s okay. Many business owners start with a conversation to explore their options. We&apos;ll help you understand what makes sense for your situation.
                 </Text>
                 <Link href="/contact">
-                  <Button variant="ghost" size="md" className="text-sm sm:text-base font-semibold py-3 px-6 rounded-xl">
+                  <Button variant="ghost" size="md" className="text-xs sm:text-sm md:text-base font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl w-full sm:w-auto">
                     Let&apos;s Talk It Through
                   </Button>
                 </Link>

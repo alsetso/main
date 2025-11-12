@@ -81,33 +81,33 @@ export default function GrowthPage() {
 
       <Section spacing="xl" className="bg-white">
         <Container size="lg">
-          <div className="max-w-6xl mx-auto space-y-12 px-4">
+          <div className="max-w-6xl mx-auto space-y-8 sm:space-y-10 md:space-y-12">
             {/* Introduction */}
-            <div className="text-center space-y-6 max-w-3xl mx-auto">
-              <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+            <div className="text-center space-y-4 sm:space-y-6 max-w-3xl mx-auto">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 You&apos;ve built a solid business. Now it&apos;s time to scale.
               </Text>
-              <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 Our growth services give you access to professional marketing, branding, and sales optimization — without giving up ownership or control. We work alongside you to implement systems that drive real results.
               </Text>
             </div>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-10 md:mt-12">
               {services.map((service, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-md p-6 sm:p-8 border-2 border-gray-200 hover:border-gray-900 transition-all">
-                  <div className="space-y-4">
-                    <Text variant="body" className="text-2xl sm:text-3xl font-bold text-gray-900">
+                <div key={index} className="bg-white rounded-2xl shadow-md p-5 sm:p-6 md:p-8 border-2 border-gray-200 hover:border-gray-900 transition-all">
+                  <div className="space-y-3 sm:space-y-4">
+                    <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
                       {service.title}
                     </Text>
-                    <Text variant="body" className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    <Text variant="body" className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed">
                       {service.description}
                     </Text>
-                    <div className="space-y-2 pt-4">
+                    <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start gap-2">
                           <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gray-900 mt-2"></div>
-                          <Text variant="body" className="text-sm text-gray-700 flex-1">
+                          <Text variant="body" className="text-xs sm:text-sm text-gray-700 flex-1">
                             {feature}
                           </Text>
                         </div>
@@ -119,41 +119,41 @@ export default function GrowthPage() {
             </div>
 
             {/* How It Works */}
-            <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 md:p-10 mt-12">
-              <Text variant="body" className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
+            <div className="bg-gray-50 rounded-2xl p-5 sm:p-6 md:p-8 lg:p-10 mt-8 sm:mt-10 md:mt-12">
+              <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
                 How It Works
               </Text>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center mx-auto">
-                    <span className="text-white text-xl font-bold">1</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="text-center space-y-2 sm:space-y-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gray-900 flex items-center justify-center mx-auto">
+                    <span className="text-white text-lg sm:text-xl font-bold">1</span>
                   </div>
-                  <Text variant="body" className="text-lg font-semibold text-gray-900">
+                  <Text variant="body" className="text-base sm:text-lg font-semibold text-gray-900">
                     Assessment
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     We analyze your current marketing, branding, and sales processes to identify opportunities for growth.
                   </Text>
                 </div>
-                <div className="text-center space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center mx-auto">
-                    <span className="text-white text-xl font-bold">2</span>
+                <div className="text-center space-y-2 sm:space-y-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gray-900 flex items-center justify-center mx-auto">
+                    <span className="text-white text-lg sm:text-xl font-bold">2</span>
                   </div>
-                  <Text variant="body" className="text-lg font-semibold text-gray-900">
+                  <Text variant="body" className="text-base sm:text-lg font-semibold text-gray-900">
                     Strategy & Implementation
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     We develop a customized growth plan and implement branding, advertising, and funnel optimizations.
                   </Text>
                 </div>
-                <div className="text-center space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center mx-auto">
-                    <span className="text-white text-xl font-bold">3</span>
+                <div className="text-center space-y-2 sm:space-y-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gray-900 flex items-center justify-center mx-auto">
+                    <span className="text-white text-lg sm:text-xl font-bold">3</span>
                   </div>
-                  <Text variant="body" className="text-lg font-semibold text-gray-900">
+                  <Text variant="body" className="text-base sm:text-lg font-semibold text-gray-900">
                     Optimization & Growth
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     We continuously monitor performance, optimize campaigns, and scale what&apos;s working to drive sustainable growth.
                   </Text>
                 </div>
@@ -161,40 +161,40 @@ export default function GrowthPage() {
             </div>
 
             {/* Key Benefits */}
-            <div className="space-y-6">
-              <Text variant="body" className="text-2xl sm:text-3xl font-bold text-gray-900 text-center">
+            <div className="space-y-4 sm:space-y-6">
+              <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center">
                 Why Choose Alset Growth Services
               </Text>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-xl p-5 border-2 border-gray-200">
-                  <Text variant="body" className="text-base font-semibold text-gray-900 mb-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-gray-200">
+                  <Text variant="body" className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">
                     ✓ Keep 100% Ownership
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     You maintain full control of your business. We&apos;re a service provider, not a partner or investor.
                   </Text>
                 </div>
-                <div className="bg-white rounded-xl p-5 border-2 border-gray-200">
-                  <Text variant="body" className="text-base font-semibold text-gray-900 mb-2">
+                <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-gray-200">
+                  <Text variant="body" className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">
                     ✓ Professional Expertise
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     Access to marketing, branding, and optimization expertise typically reserved for larger companies.
                   </Text>
                 </div>
-                <div className="bg-white rounded-xl p-5 border-2 border-gray-200">
-                  <Text variant="body" className="text-base font-semibold text-gray-900 mb-2">
+                <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-gray-200">
+                  <Text variant="body" className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">
                     ✓ Data-Driven Results
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     Every decision is backed by data. We track, measure, and optimize for real business outcomes.
                   </Text>
                 </div>
-                <div className="bg-white rounded-xl p-5 border-2 border-gray-200">
-                  <Text variant="body" className="text-base font-semibold text-gray-900 mb-2">
+                <div className="bg-white rounded-xl p-4 sm:p-5 border-2 border-gray-200">
+                  <Text variant="body" className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 sm:mb-2">
                     ✓ Scalable Systems
                   </Text>
-                  <Text variant="body" className="text-sm text-gray-700">
+                  <Text variant="body" className="text-xs sm:text-sm text-gray-700">
                     We build marketing and sales systems that grow with your business, not just one-time campaigns.
                   </Text>
                 </div>
@@ -202,15 +202,15 @@ export default function GrowthPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="bg-gray-900 rounded-2xl shadow-lg p-8 sm:p-10 text-center space-y-6 mt-12">
-              <Text as="h2" variant="heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+            <div className="bg-gray-900 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 text-center space-y-4 sm:space-y-6 mt-8 sm:mt-10 md:mt-12">
+              <Text as="h2" variant="heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
                 Ready to Scale Your Business?
               </Text>
-              <Text variant="body" className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              <Text variant="body" className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
                 Let&apos;s discuss how our growth services can help you reach more customers, build a stronger brand, and optimize your sales funnel.
               </Text>
               <Link href="/contact">
-                <Button variant="secondary" size="lg" className="text-base sm:text-lg font-semibold py-4 px-8 rounded-xl">
+                <Button variant="secondary" size="lg" className="text-sm sm:text-base md:text-lg font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl w-full sm:w-auto">
                   Get Started
                 </Button>
               </Link>
