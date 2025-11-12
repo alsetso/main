@@ -85,7 +85,7 @@ export default function GrowthPage() {
             {/* Introduction */}
             <div className="text-center space-y-6 max-w-3xl mx-auto">
               <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                You've built a solid business. Now it's time to scale.
+                You&apos;ve built a solid business. Now it&apos;s time to scale.
               </Text>
               <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
                 Our growth services give you access to professional marketing, branding, and sales optimization — without giving up ownership or control. We work alongside you to implement systems that drive real results.
@@ -154,7 +154,7 @@ export default function GrowthPage() {
                     Optimization & Growth
                   </Text>
                   <Text variant="body" className="text-sm text-gray-700">
-                    We continuously monitor performance, optimize campaigns, and scale what's working to drive sustainable growth.
+                    We continuously monitor performance, optimize campaigns, and scale what&apos;s working to drive sustainable growth.
                   </Text>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function GrowthPage() {
                     ✓ Keep 100% Ownership
                   </Text>
                   <Text variant="body" className="text-sm text-gray-700">
-                    You maintain full control of your business. We're a service provider, not a partner or investor.
+                    You maintain full control of your business. We&apos;re a service provider, not a partner or investor.
                   </Text>
                 </div>
                 <div className="bg-white rounded-xl p-5 border-2 border-gray-200">
@@ -207,7 +207,7 @@ export default function GrowthPage() {
                 Ready to Scale Your Business?
               </Text>
               <Text variant="body" className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-                Let's discuss how our growth services can help you reach more customers, build a stronger brand, and optimize your sales funnel.
+                Let&apos;s discuss how our growth services can help you reach more customers, build a stronger brand, and optimize your sales funnel.
               </Text>
               <Link href="/contact">
                 <Button variant="secondary" size="lg" className="text-base sm:text-lg font-semibold py-4 px-8 rounded-xl">

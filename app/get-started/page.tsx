@@ -48,7 +48,7 @@ export default function GetStartedPage() {
             {/* Introduction */}
             <div className="space-y-6">
               <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                If you've built a good business in Minnesota, you know what it took — long days, lean years, and a lot of pride.
+                If you&apos;ve built a good business in Minnesota, you know what it took — long days, lean years, and a lot of pride.
               </Text>
               <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
                 Now, you might be ready for something more: new growth, new systems, or maybe even a well-deserved transition.
@@ -58,10 +58,10 @@ export default function GetStartedPage() {
             {/* That's where Alset comes in */}
             <div className="space-y-4">
               <Text variant="body" className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
-                That's where Alset Solutions comes in.
+                That&apos;s where Alset Solutions comes in.
               </Text>
               <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                We're a Minnesota-based private investment firm that partners directly with local business owners.
+                We&apos;re a Minnesota-based private investment firm that partners directly with local business owners.
               </Text>
               <Text variant="body" className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
                 We bring capital, structure, and growth strategy — not to change who you are, but to help your business reach its next level.
@@ -93,7 +93,7 @@ export default function GetStartedPage() {
                       </Text>
                     </div>
                     <Text variant="body" className="text-sm sm:text-base text-gray-600 font-medium">
-                      You want a partner to help grow, but you're not ready to exit.
+                      You want a partner to help grow, but you&apos;re not ready to exit.
                     </Text>
                     <div className="space-y-2 pt-2">
                       <Text variant="body" className="text-sm text-gray-700">
@@ -131,7 +131,7 @@ export default function GetStartedPage() {
                       </Text>
                     </div>
                     <Text variant="body" className="text-sm sm:text-base text-gray-600 font-medium">
-                      You're ready to sell and transition to your next chapter.
+                      You&apos;re ready to sell and transition to your next chapter.
                     </Text>
                     <div className="space-y-2 pt-2">
                       <Text variant="body" className="text-sm text-gray-700">
@@ -179,11 +179,11 @@ export default function GetStartedPage() {
                   Not sure which path is right for you?
                 </Text>
                 <Text variant="body" className="text-sm sm:text-base text-gray-700 mb-4">
-                  That's okay. Many business owners start with a conversation to explore their options. We'll help you understand what makes sense for your situation.
+                  That&apos;s okay. Many business owners start with a conversation to explore their options. We&apos;ll help you understand what makes sense for your situation.
                 </Text>
                 <Link href="/contact">
                   <Button variant="ghost" size="md" className="text-sm sm:text-base font-semibold py-3 px-6 rounded-xl">
-                    Let's Talk It Through
+                    Let&apos;s Talk It Through
                   </Button>
                 </Link>
               </div>
