@@ -17,7 +17,7 @@ export const siteConfig = {
   },
   social: {
     twitter: '@alset',
-    linkedin: 'company/alset',
+    linkedin: 'https://www.linkedin.com/company/109910380',
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,

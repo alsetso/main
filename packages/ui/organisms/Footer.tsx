@@ -65,7 +65,7 @@ export function Footer() {
             )}
             {siteConfig.social.linkedin && (
               <a
-                href={`https://linkedin.com/${siteConfig.social.linkedin}`}
+                href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-600 transition-colors"
