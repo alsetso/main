@@ -14,4 +14,5 @@ export * from './InvestmentOpportunities';
 export * from './InvestmentCriteria';
 export * from './InvestorBenefits';
 export * from './InvestmentProcess';
+export * from './HowItWorks';
 

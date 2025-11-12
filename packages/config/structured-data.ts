@@ -30,7 +30,7 @@ export function generateOrganizationSchema(): OrganizationSchema {
     },
     sameAs: [
       `https://twitter.com/${siteConfig.social.twitter.replace('@', '')}`,
-      `https://linkedin.com/${siteConfig.social.linkedin}`,
+      siteConfig.social.linkedin,
     ],
   };
 }
@@ -115,7 +115,7 @@ export function generateLocalBusinessSchema(): LocalBusinessSchema {
     },
     sameAs: [
       `https://twitter.com/${siteConfig.social.twitter.replace('@', '')}`,
-      `https://linkedin.com/${siteConfig.social.linkedin}`,
+      siteConfig.social.linkedin,
     ],
   };
 }

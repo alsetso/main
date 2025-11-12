@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container } from '../atoms/Container';
-import { navigationLinks } from '@alset/config/routes';
+import { Button } from '../atoms/Button';
+import { navigationLinks, routes } from '@alset/config/routes';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,14 +31,21 @@ export function Header() {
     >
       <Container size="xl">
         <nav className="flex items-center justify-between h-20 md:h-24">
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.span 
-              className="text-2xl font-bold tracking-tight"
+          <Link href="/" className="flex items-center">
+            <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              className="h-8 md:h-10 w-auto"
             >
-              Alset
-            </motion.span>
+              <Image 
+                src="/logo.svg" 
+                alt="Alset" 
+                width={200}
+                height={90}
+                className="h-full w-auto"
+                priority
+              />
+            </motion.div>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -49,28 +58,46 @@ export function Header() {
               >
                 <Link
                   href={link.path}
-                  className="text-sm font-medium hover:text-gray-600 transition-colors"
+                  className="text-sm font-medium text-gray-900 hover:text-gray-700 transition-colors"
                 >
                   {link.label}
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * navigationLinks.length, duration: 0.6 }}
+            >
+              <Link href={routes.invest.path}>
+                <Button variant="primary" size="sm" className="text-sm font-semibold px-4 py-2 rounded-xl">
+                  {routes.invest.label}
+                </Button>
+              </Link>
+            </motion.div>
           </div>
 
-          {/* Mobile menu button placeholder */}
-          <button className="md:hidden p-2" aria-label="Menu">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+          {/* Mobile menu with Invest button */}
+          <div className="md:hidden flex items-center gap-3">
+            <Link href={routes.invest.path}>
+              <Button variant="primary" size="sm" className="text-xs font-semibold px-3 py-1.5 rounded-lg">
+                {routes.invest.label}
+              </Button>
+            </Link>
+            <button className="p-2 text-gray-900" aria-label="Menu">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </nav>
       </Container>
     </motion.header>

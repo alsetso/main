@@ -11,17 +11,13 @@ export const routes = {
     path: '/contact',
     label: 'Contact',
   },
-  minnesota: {
-    path: '/minnesota',
-    label: 'Minnesota',
+  invest: {
+    path: '/invest',
+    label: 'Invest',
   },
-  minnesotaIndustries: {
-    path: '/minnesota/industries',
-    label: 'Industries',
-  },
-  investments: {
-    path: '/minnesota/industries',
-    label: 'Investments',
+  partnerOrSell: {
+    path: '/get-started',
+    label: 'Partner or Sell',
   },
 } as const;
 
@@ -34,7 +30,7 @@ export function getRoute(key: RouteKey): string {
 export const navigationLinks = [
   routes.home,
   routes.about,
-  routes.investments,
+  routes.partnerOrSell,
   routes.contact,
 ] as const;
 

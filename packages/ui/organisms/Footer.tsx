@@ -8,14 +8,14 @@ import { siteConfig } from '@alset/config/metadata';
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-16 md:py-20">
+    <footer className="bg-black border-t border-gray-800 py-16 md:py-20">
       <Container size="lg">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
           <div>
-            <Text as="h3" variant="heading" className="text-2xl mb-2 text-black">
-              {siteConfig.name}
+            <Text as="h3" variant="heading" className="text-2xl mb-2 text-white">
+              Alset
             </Text>
-            <Text variant="caption" className="text-gray-600">
+            <Text variant="caption" className="text-gray-400">
               A private investment and technology company based in Minnesota.
             </Text>
           </div>
@@ -25,29 +25,17 @@ export function Footer() {
               <Link
                 key={link.path}
                 href={link.path}
-                className="text-gray-600 hover:text-black transition-colors text-sm"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/minnesota/industries"
-              className="text-gray-600 hover:text-black transition-colors text-sm"
-            >
-              Investments
-            </Link>
-            <Link
-              href="/contact"
-              className="text-gray-600 hover:text-black transition-colors text-sm"
-            >
-              Services
-            </Link>
           </nav>
         </div>
         
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <Text variant="caption" className="text-gray-500 text-sm">
-            Copyright © {new Date().getFullYear()} {siteConfig.name}, Inc.
+            Copyright © {new Date().getFullYear()} Alset Solutions, Inc.
           </Text>
           <div className="flex space-x-6">
             {siteConfig.social.twitter && (
@@ -55,7 +43,7 @@ export function Footer() {
                 href={`https://twitter.com/${siteConfig.social.twitter.replace('@', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-500 hover:text-gray-300 transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +56,7 @@ export function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-gray-500 hover:text-gray-300 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

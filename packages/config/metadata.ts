@@ -17,7 +17,7 @@ export const siteConfig = {
   },
   social: {
     twitter: '@alset',
-    linkedin: 'https://www.linkedin.com/company/109910380',
+    linkedin: 'https://www.linkedin.com/company/alset-solutions-inc',
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,

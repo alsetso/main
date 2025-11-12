@@ -4,7 +4,6 @@ import { siteConfig } from '@alset/config/metadata';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
   const now = new Date();
-  const recentDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(); // 7 days ago
   const monthlyDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString(); // 30 days ago
 
   return [
@@ -15,34 +14,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/minnesota`,
-      lastModified: recentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/about`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/minnesota/industries`,
+      url: `${baseUrl}/invest`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/minnesota/industries/real-estate`,
+      url: `${baseUrl}/get-started`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
-      priority: 0.75,
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/minnesota/industries/home-services`,
+      url: `${baseUrl}/growth`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
-      priority: 0.75,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/opportunities`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
