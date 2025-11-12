@@ -46,7 +46,7 @@ export default function EquityPage() {
         <Container size="md">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
             <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              If you're looking for equity investment and a strategic partner to help your business grow, let's talk.
+              If you&apos;re looking for equity investment and a strategic partner to help your business grow, let&apos;s talk.
             </Text>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">

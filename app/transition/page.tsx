@@ -46,7 +46,7 @@ export default function TransitionPage() {
         <Container size="md">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
             <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              Let's discuss your transition needs and explore solutions that can help your business navigate change successfully.
+              Let&apos;s discuss your transition needs and explore solutions that can help your business navigate change successfully.
             </Text>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">

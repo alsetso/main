@@ -48,7 +48,7 @@ export default function ScalePage() {
         <Container size="md">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
             <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              If you're looking to grow your business and need capital, technology, or strategic support, let's talk about how we can help.
+              If you&apos;re looking to grow your business and need capital, technology, or strategic support, let&apos;s talk about how we can help.
             </Text>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">

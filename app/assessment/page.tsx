@@ -47,7 +47,7 @@ export default function AssessmentPage() {
         <Container size="md">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
             <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              Assessing your business is a big decision. We start with a confidential, no-pressure conversation to understand your situation and see if there's a fit.
+              Assessing your business is a big decision. We start with a confidential, no-pressure conversation to understand your situation and see if there&apos;s a fit.
             </Text>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">

@@ -46,7 +46,7 @@ export default function LendingPage() {
         <Container size="md">
           <div className="text-center space-y-8 max-w-3xl mx-auto">
             <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              Let's discuss your financing needs and explore solutions that work for your business.
+              Let&apos;s discuss your financing needs and explore solutions that work for your business.
             </Text>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
