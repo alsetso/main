@@ -7,11 +7,11 @@ import { Text, Container } from '@alset/ui/atoms';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Our Services',
-  description: 'Alset Solutions offers comprehensive investment and growth services including business assessment, lending, scaling partnerships, equity investment, and business transition support for Minnesota businesses.',
+  description: 'Alset Solutions offers comprehensive investment and growth services including business acquisition, lending, scaling partnerships, equity investment, and business transition support for Minnesota businesses.',
   path: '/services',
   keywords: [
     'Minnesota business services',
-    'business assessment Minnesota',
+    'business acquisition Minnesota',
     'business lending Minnesota',
     'business scaling services',
     'equity investment Minnesota',
@@ -33,8 +33,8 @@ Our approach is hands-on, patient, and built for the long term. We're not lookin
 
 const services = [
   {
-    title: 'Assessment',
-    description: "Assess your business with a partner who understands Minnesota values and will preserve what you've built. We assess businesses with respect for their legacy and a clear vision for their future.",
+    title: 'Acquisition',
+    description: "Acquire your business with a partner who understands Minnesota values and will preserve what you've built. We acquire businesses with respect for their legacy and a clear vision for their future.",
   },
   {
     title: 'Lending',
@@ -71,7 +71,6 @@ export default function ServicesPage() {
 
       <AlsetShapesBackground 
         headline="Our Services"
-        subtitle="Investment, growth, and partnership solutions for Minnesota businesses"
       />
 
       {/* Services Introduction */}

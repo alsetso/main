@@ -18,4 +18,13 @@ export * from './HowItWorks';
 export * from './AlsetShapesBackground';
 export * from './MiniAlsetShapesLogo';
 export * from './ServiceHero';
+export * from './ContentSection';
+export * from './ContentBlock';
+export * from './ContentHero';
+export * from './FeatureList';
+export * from './ServiceShapesNavigation';
+export * from './InteractiveSubtitle';
+export * from './ServiceContentSection';
+export * from './OtherServicesSection';
+export * from './ServiceCard';
 

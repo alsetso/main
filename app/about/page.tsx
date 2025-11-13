@@ -1,13 +1,11 @@
 import { Metadata } from 'next';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { AlsetShapesBackground } from '@alset/ui';
-import { Section } from '@alset/ui/molecules';
-import { Text, Container } from '@alset/ui/atoms';
+import { AlsetShapesBackground, ContentSection, ContentBlock } from '@alset/ui';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'For the Love of Minnesota',
-  description: 'We were built here — where the winters are long, the people are steady, and doing things right still matters. Minnesota taught us that hard work is the first investment, and community is the greatest return.',
+  description: 'We were raised here — where the winters are long, the work is honest, and people still wave when they pass you on the road. Alset Solutions forms partnerships with Minnesota businesses, bringing capital, systems, and strategy to help them scale.',
   path: '/about',
   keywords: [
     'Minnesota investment company',
@@ -18,25 +16,75 @@ export const metadata: Metadata = generatePageMetadata({
   ],
 });
 
-const manifestoIntro = {
-  emoji: '🩵',
-  title: 'The Alset Manifesto: For the Love of Minnesota',
-  content: `We were raised here — where the winters are long, the work is honest, and people still wave when they pass each other on the road.
+const manifestoContent = [
+  {
+    type: 'paragraph',
+    text: `We were raised here —
 
-Where businesses are built on handshakes, not headlines.
+where the winters are long, the work is honest,
 
-Where integrity isn't an option — it's the baseline.
+and people still wave when they pass you on the road.`,
+  },
+  {
+    type: 'paragraph',
+    text: `Where businesses are built on handshakes, not headlines.`,
+  },
+  {
+    type: 'paragraph',
+    text: `Where integrity isn't optional — it's expected.`,
+  },
+  {
+    type: 'paragraph',
+    text: `Minnesota has always been more than a place.
 
-Minnesota has always been more than a state. It's a mindset.
+It's a mindset.
 
-A quiet determination that says: we can build anything if we do it right.
+A quiet determination that says:
 
-Alset Solutions was born from that belief.
+we can build anything if we do it right.`,
+  },
+  {
+    type: 'paragraph',
+    text: `Alset Solutions was born from that belief.`,
+  },
+  {
+    type: 'paragraph',
+    text: `We don't run a fund.
 
-We are a private investment firm and growth partner built for a new era of Minnesota business.
+We form partnerships.
 
-Our mission is simple: help good people build great companies — through capital, creativity, and code.`,
-};
+We build with owners — not above them.`,
+  },
+  {
+    type: 'paragraph',
+    text: `Alset creates joint ventures with small and mid-sized Minnesota businesses,
+
+bringing the capital, systems, and strategy to help them scale —
+
+while keeping founders at the heart of the company they built.`,
+  },
+  {
+    type: 'paragraph',
+    text: `We are operators, not spectators.
+
+We grow businesses from the inside out — through leadership, technology, and execution that lasts.`,
+  },
+  {
+    type: 'paragraph',
+    text: `Our mission is simple:
+
+help good people build great companies
+
+through partnership, growth, and grit.`,
+  },
+  {
+    type: 'paragraph',
+    emphasis: true,
+    text: `Because when Minnesota builds,
+
+it builds things that last.`,
+  },
+];
 
 
 export default function ManifestoPage() {
@@ -57,21 +105,22 @@ export default function ManifestoPage() {
       <AlsetShapesBackground 
         headline="Alset Manifesto"
         subtitle="For the Love of Minnesota"
+        showShapes={false}
       />
 
       {/* The Alset Manifesto Section */}
-      <Section spacing="xl" className="bg-white">
-        <Container size="md">
-          <div className="max-w-4xl mx-auto space-y-6">
-            <Text
-              variant="body"
-              className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed whitespace-pre-line"
+      <ContentSection variant="default">
+        {manifestoContent.map((block, index) => (
+          <ContentBlock
+            key={index}
+            size={block.emphasis ? 'lg' : 'md'}
+            emphasis={block.emphasis}
+            className="whitespace-pre-line"
             >
-              {manifestoIntro.content}
-            </Text>
-          </div>
-        </Container>
-      </Section>
+            {block.text}
+          </ContentBlock>
+        ))}
+      </ContentSection>
     </>
   );
 }

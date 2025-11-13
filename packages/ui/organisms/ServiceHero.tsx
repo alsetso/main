@@ -7,11 +7,11 @@ import { Text } from '../atoms/Text';
 export interface ServiceHeroProps {
   title: string;
   description?: string;
-  service: 'assessment' | 'lending' | 'scale' | 'equity' | 'transition';
+  service: 'acquisition' | 'lending' | 'scale' | 'equity' | 'transition';
 }
 
 const serviceConfig = {
-  assessment: {
+  acquisition: {
     type: 'triangle',
     className: 'bg-blue-500',
     size: 'w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40',

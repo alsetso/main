@@ -1,11 +1,7 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { ServiceHero } from '@alset/ui';
-import { Section } from '@alset/ui/molecules';
-import { Container } from '@alset/ui/atoms';
-import { Text, Button } from '@alset/ui/atoms';
+import { ServiceHero, ServiceContentSection, OtherServicesSection } from '@alset/ui';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Business Lending — Access Capital for Your Business',
@@ -42,23 +38,16 @@ export default function LendingPage() {
         service="lending"
       />
 
-      <Section spacing="xl" className="bg-zinc-100">
-        <Container size="md">
-          <div className="text-center space-y-8 max-w-3xl mx-auto">
-            <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              Let&apos;s discuss your financing needs and explore solutions that work for your business.
-            </Text>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Link href="/contact">
-                <Button variant="primary" size="lg" className="min-w-[240px]">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <ServiceContentSection
+        description="Alset Solutions helps Minnesota businesses access the capital they need to grow through our lending facilitation services, part of our comprehensive inhouse growth team offering. We understand that securing the right financing—whether it's working capital, equipment loans, SBA loans, or expansion capital—can be challenging for growing businesses. That's why we work as your strategic partner to connect you with the right lenders, prepare compelling loan applications, and structure financing solutions that align with your growth plans. Our team has deep relationships with SBA lenders, commercial banks, alternative lenders, and private capital sources across Minnesota and the Midwest. We help you navigate the lending landscape, identify the best financing options for your situation, prepare documentation, and negotiate terms that support your business objectives. Beyond just securing capital, we ensure your financing strategy integrates with your overall growth plan, helping you use capital efficiently to drive revenue, improve operations, and build long-term value. Whether you need funding for expansion, equipment, inventory, technology, or working capital, we help you access the right financing at the right time."
+        contextLink={{
+          label: 'Inhouse Growth Team',
+          href: '/how-it-works/inhouse-growth-team',
+          color: 'green',
+        }}
+      />
+
+      <OtherServicesSection currentService="lending" />
     </>
   );
 }

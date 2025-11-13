@@ -8,6 +8,85 @@ import { Container } from '../atoms/Container';
 import { Button } from '../atoms/Button';
 import { navigationLinks, navigationGroups, routes } from '@alset/config/routes';
 
+// Shape mapping for services
+const serviceShapes: Record<string, { type: 'triangle' | 'square' | 'circle' | 'diamond' | 'plus'; color: string; className: string }> = {
+  '/acquisition': {
+    type: 'triangle',
+    color: 'blue',
+    className: 'bg-blue-500',
+  },
+  '/lending': {
+    type: 'square',
+    color: 'green',
+    className: 'bg-green-500',
+  },
+  '/scale': {
+    type: 'circle',
+    color: 'red',
+    className: 'bg-red-500',
+  },
+  '/equity': {
+    type: 'diamond',
+    color: 'yellow',
+    className: 'bg-yellow-500',
+  },
+  '/transition': {
+    type: 'plus',
+    color: 'purple',
+    className: 'bg-purple-500',
+  },
+};
+
+function ServiceShapeIcon({ path }: { path: string }) {
+  const shape = serviceShapes[path];
+  if (!shape) return null;
+
+  const size = 'w-4 h-4';
+  
+  if (shape.type === 'triangle') {
+    return (
+      <div
+        className={`${size} ${shape.className}`}
+        style={{
+          clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
+        }}
+      />
+    );
+  }
+  
+  if (shape.type === 'square') {
+    return <div className={`${size} ${shape.className}`} />;
+  }
+  
+  if (shape.type === 'circle') {
+    return <div className={`${size} ${shape.className} rounded-full`} />;
+  }
+  
+  if (shape.type === 'diamond') {
+    return (
+      <div
+        className={`${size} ${shape.className}`}
+        style={{
+          clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
+        }}
+      />
+    );
+  }
+  
+  if (shape.type === 'plus') {
+    return (
+      <div
+        className={`${size} ${shape.className}`}
+        style={{
+          clipPath: 'polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)',
+        }}
+      />
+    );
+  }
+  
+  return null;
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,7 +140,7 @@ export function Header() {
             </motion.div>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-1 overflow-visible">
+          <div className="hidden lg:flex items-center space-x-1" style={{ overflow: 'visible' }}>
             {/* Main Navigation */}
             {navigationGroups.main.map((link, index) => (
               <motion.div
@@ -85,6 +164,7 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * navigationGroups.main.length, duration: 0.6 }}
               className="relative group"
+              style={{ overflow: 'visible' }}
             >
               <button className="text-sm font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md transition-colors flex items-center gap-1">
                 Services
@@ -92,18 +172,21 @@ export function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]">
+              <div className="absolute top-full left-0 mt-1 min-w-64 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-[100]" style={{ width: '16rem' }}>
                 <div className="py-2">
                   {navigationGroups.services.map((link) => (
                     <Link
                       key={link.path}
                       href={link.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors flex items-center gap-3"
                     >
-                      <div className="font-medium">{link.label}</div>
-                      {link.description && (
-                        <div className="text-xs text-gray-500 mt-0.5">{link.description}</div>
-                      )}
+                      <ServiceShapeIcon path={link.path} />
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium">{link.label}</div>
+                        {link.description && (
+                          <div className="text-xs text-gray-500 mt-0.5">{link.description}</div>
+                        )}
+                      </div>
                     </Link>
                   ))}
                 </div>
@@ -249,12 +332,15 @@ export function Header() {
                             <Link
                               href={link.path}
                               onClick={() => setMobileMenuOpen(false)}
-                              className="block text-base font-medium text-gray-900 hover:text-gray-700 py-3 px-4 rounded-md hover:bg-gray-50 transition-all"
+                              className="block text-base font-medium text-gray-900 hover:text-gray-700 py-3 px-4 rounded-md hover:bg-gray-50 transition-all flex items-center gap-3"
                             >
-                              <div>{link.label}</div>
-                              {link.description && (
-                                <div className="text-sm text-gray-500 mt-0.5">{link.description}</div>
-                              )}
+                              <ServiceShapeIcon path={link.path} />
+                              <div className="flex-1">
+                                <div>{link.label}</div>
+                                {link.description && (
+                                  <div className="text-sm text-gray-500 mt-0.5">{link.description}</div>
+                                )}
+                              </div>
                             </Link>
                           </motion.div>
                         ))}

@@ -1,11 +1,9 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { ServiceHero } from '@alset/ui';
+import { ServiceHero, ServiceContentSection, OtherServicesSection, ServiceCard } from '@alset/ui';
 import { Section } from '@alset/ui/molecules';
-import { Container } from '@alset/ui/atoms';
-import { Text, Button } from '@alset/ui/atoms';
+import { Container, Text } from '@alset/ui/atoms';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Equity Investment — Equity Partnerships with Alset',
@@ -42,23 +40,43 @@ export default function EquityPage() {
         service="equity"
       />
 
-      <Section spacing="xl" className="bg-zinc-100">
-        <Container size="md">
-          <div className="text-center space-y-8 max-w-3xl mx-auto">
-            <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              If you&apos;re looking for equity investment and a strategic partner to help your business grow, let&apos;s talk.
+      <ServiceContentSection
+        description="Alset Solutions takes meaningful equity positions in Minnesota businesses through our joint-venture partnership model, providing both capital and strategic support while you retain control and continue to grow. Unlike traditional private equity firms that seek majority control, we partner with business owners who want a strategic investor that brings operational expertise, technology resources, and growth systems—not just capital. Our equity partnerships are structured to align incentives: we succeed when you succeed. As equity partners, we provide access to our in-house growth teams, technology resources, marketing capabilities, and strategic guidance while respecting your vision and maintaining your leadership role. This model is ideal for established Minnesota businesses that need capital for expansion, technology upgrades, market expansion, or operational improvements but want to maintain ownership and control. We work with businesses across industries, focusing on companies with strong fundamentals, growth potential, and alignment with our values of building enduring Minnesota enterprises."
+        contextLink={{
+          label: 'Joint-Venture Partnerships',
+          href: '/how-it-works/joint-ventures',
+          color: 'yellow',
+        }}
+      />
+
+      {/* Related Joint-Venture Services */}
+      <Section spacing="xl" className="bg-white">
+        <Container size="lg">
+          <div className="max-w-6xl mx-auto">
+            <Text as="h2" variant="subheading" className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+              Other Joint-Venture Services
             </Text>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Link href="/contact">
-                <Button variant="primary" size="lg" className="min-w-[240px]">
-                  Start a Partnership
-                </Button>
-              </Link>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ServiceCard
+                title="Acquisition"
+                description="Acquire established Minnesota businesses through joint-venture partnerships with qualified capital partners for long-term success."
+                href="/acquisition"
+                color="blue"
+                shape="triangle"
+              />
+              <ServiceCard
+                title="Transition"
+                description="Navigate complex transitions—ownership succession, operational restructuring, leadership changes—with capital and expertise."
+                href="/transition"
+                color="purple"
+                shape="plus"
+              />
             </div>
           </div>
         </Container>
       </Section>
+
+      <OtherServicesSection currentService="equity" />
     </>
   );
 }

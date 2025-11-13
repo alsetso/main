@@ -75,7 +75,6 @@ export default function InvestPage() {
 
       <AlsetShapesBackground 
         headline="Invest in Alset Solutions"
-        subtitle="Join our capital pool and partner with a Minnesota investment firm built for the long term"
       />
 
       {/* Investment Introduction */}

@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/assessment`,
+      url: `${baseUrl}/acquisition`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/transition`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/how-it-works`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,

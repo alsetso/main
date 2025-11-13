@@ -1,11 +1,7 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { ServiceHero } from '@alset/ui';
-import { Section } from '@alset/ui/molecules';
-import { Container } from '@alset/ui/atoms';
-import { Text, Button } from '@alset/ui/atoms';
+import { ServiceHero, ServiceContentSection, OtherServicesSection } from '@alset/ui';
 
 export const metadata: Metadata = generatePageMetadata({
   title: 'Scale Your Business — Growth Partnership with Alset',
@@ -44,23 +40,16 @@ export default function ScalePage() {
         service="scale"
       />
 
-      <Section spacing="xl" className="bg-zinc-100">
-        <Container size="md">
-          <div className="text-center space-y-8 max-w-3xl mx-auto">
-            <Text variant="body" className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              If you&apos;re looking to grow your business and need capital, technology, or strategic support, let&apos;s talk about how we can help.
-            </Text>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Link href="/contact">
-                <Button variant="primary" size="lg" className="min-w-[240px]">
-                  Start a Partnership
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <ServiceContentSection
+        description="Alset Solutions runs a full-stack growth agency that helps Minnesota business owners scale without giving up equity. Through our inhouse growth team, we provide the capital, technology, marketing, operations, and strategic support needed to transform good businesses into great ones—all while you maintain 100% ownership. We don't do vague consulting or one-off projects. Instead, we work inside your business, building systems, training teams, and implementing solutions that generate measurable results. Our comprehensive approach covers marketing and brand growth—from digital marketing and SEO to customer acquisition funnels and retention programs; technology and automation—integrating software, automating processes, and turning inefficiencies into profit; operational performance—rebuilding operations to run smoother, faster, and stronger; revenue acceleration—optimizing sales processes, pricing strategies, and conversion rates; and strategic direction—planning the next 12, 24, and 36 months so your business grows by design. We measure everything, focus on what moves revenue, and build systems that work long after we're done. If your business has potential but needs the right team, systems, and resources to unlock it, we're your growth partner."
+        contextLink={{
+          label: 'Inhouse Growth Team',
+          href: '/how-it-works/inhouse-growth-team',
+          color: 'red',
+        }}
+      />
+
+      <OtherServicesSection currentService="scale" />
     </>
   );
 }

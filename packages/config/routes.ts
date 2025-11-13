@@ -15,10 +15,10 @@ export const routes = {
     path: '/invest',
     label: 'Invest',
   },
-  assessment: {
-    path: '/assessment',
-    label: 'Assessment',
-    description: 'Assess your business',
+  acquisition: {
+    path: '/acquisition',
+    label: 'Acquisition',
+    description: 'Acquire your business',
   },
   lending: {
     path: '/lending',
@@ -40,6 +40,16 @@ export const routes = {
     label: 'Transition',
     description: 'Business transition',
   },
+  services: {
+    path: '/services',
+    label: 'Services',
+    description: 'Our services',
+  },
+  howItWorks: {
+    path: '/how-it-works',
+    label: 'How It Works',
+    description: 'How it works',
+  },
 } as const;
 
 export type RouteKey = keyof typeof routes;
@@ -55,7 +65,7 @@ export const navigationGroups = {
     routes.about,
   ],
   services: [
-    routes.assessment,
+    routes.acquisition,
     routes.lending,
     routes.scale,
     routes.equity,
@@ -71,7 +81,9 @@ export const navigationGroups = {
 export const navigationLinks = [
   routes.home,
   routes.about,
-  routes.assessment,
+  routes.services,
+  routes.howItWorks,
+  routes.acquisition,
   routes.lending,
   routes.scale,
   routes.equity,
