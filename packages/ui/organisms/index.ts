@@ -27,4 +27,5 @@ export * from './InteractiveSubtitle';
 export * from './ServiceContentSection';
 export * from './OtherServicesSection';
 export * from './ServiceCard';
+export * from './ServicesHyperlinkSentence';
 

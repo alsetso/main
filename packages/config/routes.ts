@@ -16,27 +16,27 @@ export const routes = {
     label: 'Invest',
   },
   acquisition: {
-    path: '/acquisition',
+    path: '/services/acquisition',
     label: 'Acquisition',
     description: 'Acquire your business',
   },
   lending: {
-    path: '/lending',
+    path: '/services/lending',
     label: 'Lending',
     description: 'Business financing',
   },
   scale: {
-    path: '/scale',
+    path: '/services/scale',
     label: 'Scale',
     description: 'Growth partnership',
   },
   equity: {
-    path: '/equity',
+    path: '/services/equity',
     label: 'Equity',
     description: 'Equity investment',
   },
   transition: {
-    path: '/transition',
+    path: '/services/transition',
     label: 'Transition',
     description: 'Business transition',
   },

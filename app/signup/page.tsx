@@ -7,23 +7,26 @@ import { Container } from '@alset/ui/atoms';
 import { Text, Button } from '@alset/ui/atoms';
 import { createClient } from '../supabase/client';
 
-export default function LoginPage() {
+export default function SignUpPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setLoading(true);
 
     try {
       const supabase = createClient();
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+        },
       });
 
       if (error) {
@@ -32,8 +35,10 @@ export default function LoginPage() {
         return;
       }
 
-      router.push('/');
-      router.refresh();
+      // Show success message
+      setError(null);
+      alert('Check your email to confirm your account!');
+      router.push('/login');
     } catch (err) {
       setError('An unexpected error occurred');
       setLoading(false);
@@ -46,17 +51,19 @@ export default function LoginPage() {
         <div className="bg-white rounded-lg border border-gray-200 p-8 md:p-10 shadow-sm">
           <div className="text-center mb-8">
             <Text as="h1" variant="heading" className="mb-2">
-              Login
+              Sign Up
             </Text>
             <Text variant="body" className="text-gray-600">
-              Sign in to your Alset Solutions account
+              Create your Alset Solutions account
             </Text>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleSignUp} className="space-y-6">
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md text-sm">
-                {error}
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+                <Text variant="body" className="text-sm">
+                  {error}
+                </Text>
               </div>
             )}
 
@@ -85,6 +92,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                minLength={6}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                 placeholder="••••••••"
               />
@@ -97,15 +105,15 @@ export default function LoginPage() {
               className="w-full"
               disabled={loading}
             >
-              {loading ? 'Signing in...' : 'Sign In'}
+              {loading ? 'Creating Account...' : 'Sign Up'}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <Text variant="body" className="text-sm text-gray-600">
-              Don&apos;t have an account?{' '}
-              <Link href="/signup" className="text-black font-medium hover:underline">
-                Sign up
+              Already have an account?{' '}
+              <Link href="/login" className="text-black font-medium hover:underline">
+                Login
               </Link>
             </Text>
           </div>

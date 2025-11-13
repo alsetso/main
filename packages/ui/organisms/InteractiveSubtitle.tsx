@@ -62,13 +62,17 @@ export function InteractiveSubtitle({
       We acquire Minnesota businesses through{' '}
       <Link 
         href="/how-it-works/joint-ventures" 
-        className={`underline transition-colors relative group inline-block ${
+        className={`underline transition-colors relative group inline-block touch-manipulation ${
           hoveredShape && shapeToLinkMap[hoveredShape.index]?.link === 'joint-ventures'
             ? shapeToLinkMap[hoveredShape.index].colorClass
-            : 'hover:text-black'
+            : 'hover:text-black active:text-black'
         }`}
         onMouseEnter={() => handleJointVenturesHover(true)}
         onMouseLeave={() => handleJointVenturesHover(false)}
+        onTouchStart={() => handleJointVenturesHover(true)}
+        onTouchEnd={() => {
+          setTimeout(() => handleJointVenturesHover(false), 300);
+        }}
       >
         joint-ventures
         {/* Show label when shape is hovered */}
@@ -107,13 +111,17 @@ export function InteractiveSubtitle({
       {' '}— and we run a{' '}
       <Link 
         href="/how-it-works/inhouse-growth-team" 
-        className={`underline transition-colors relative group inline-block ${
+        className={`underline transition-colors relative group inline-block touch-manipulation ${
           hoveredShape && shapeToLinkMap[hoveredShape.index]?.link === 'growth-team'
             ? shapeToLinkMap[hoveredShape.index].colorClass
-            : 'hover:text-black'
+            : 'hover:text-black active:text-black'
         }`}
         onMouseEnter={() => handleGrowthTeamHover(true)}
         onMouseLeave={() => handleGrowthTeamHover(false)}
+        onTouchStart={() => handleGrowthTeamHover(true)}
+        onTouchEnd={() => {
+          setTimeout(() => handleGrowthTeamHover(false), 300);
+        }}
       >
         inhouse growth team
         {/* Show label when shape is hovered */}

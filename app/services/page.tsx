@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { generatePageMetadata, siteConfig } from '@alset/config/metadata';
 import { generateBreadcrumbSchema } from '@alset/config/structured-data';
-import { AlsetShapesBackground } from '@alset/ui';
+import { AlsetShapesBackground, ServiceCard, ServicesHyperlinkSentence } from '@alset/ui';
 import { Section } from '@alset/ui/molecules';
 import { Text, Container } from '@alset/ui/atoms';
 
@@ -19,38 +19,41 @@ export const metadata: Metadata = generatePageMetadata({
   ],
 });
 
-const servicesIntro = {
-  content: `At Alset Solutions, we don't just invest — we build, scale, and transform businesses.
-
-Our services are designed for Minnesota companies that are ready to grow, transition, or find the right partner for the next chapter.
-
-Whether you're looking to sell your business, secure financing, scale operations, raise equity, or navigate a transition, we bring the capital, creativity, and technology to make it happen.
-
-We work with businesses doing over $1 million in annual sales — companies that form the backbone of Minnesota's economy. The manufacturers, service providers, and local businesses that keep our communities strong.
-
-Our approach is hands-on, patient, and built for the long term. We're not looking for quick exits or flashy headlines. We're looking to build something that lasts.`,
-};
-
 const services = [
   {
+    slug: 'acquisition',
     title: 'Acquisition',
     description: "Acquire your business with a partner who understands Minnesota values and will preserve what you've built. We acquire businesses with respect for their legacy and a clear vision for their future.",
+    color: 'blue' as const,
+    shape: 'triangle' as const,
   },
   {
+    slug: 'lending',
     title: 'Lending',
     description: 'Strategic business financing that supports growth without compromising your vision. We provide capital solutions tailored to your specific needs and timeline.',
+    color: 'green' as const,
+    shape: 'square' as const,
   },
   {
+    slug: 'scale',
     title: 'Scale',
     description: 'Growth partnerships that combine capital with operational expertise. We help you scale efficiently, sustainably, and with the right technology infrastructure.',
+    color: 'red' as const,
+    shape: 'circle' as const,
   },
   {
+    slug: 'equity',
     title: 'Equity',
     description: 'Equity investment for businesses ready to accelerate. We take meaningful positions and provide strategic guidance to help you reach the next level.',
+    color: 'yellow' as const,
+    shape: 'diamond' as const,
   },
   {
+    slug: 'transition',
     title: 'Transition',
     description: "Navigate business transitions with confidence. Whether it's leadership changes, ownership transfers, or strategic pivots, we provide the support and capital to make it smooth.",
+    color: 'purple' as const,
+    shape: 'plus' as const,
   },
 ];
 
@@ -77,34 +80,43 @@ export default function ServicesPage() {
       <Section spacing="xl" className="bg-white">
         <Container size="md">
           <div className="max-w-4xl mx-auto space-y-6">
-            <Text
-              variant="body"
-              className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed whitespace-pre-line"
-            >
-              {servicesIntro.content}
-            </Text>
+            <div className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
+              <p>
+                At Alset Solutions, we don&apos;t just invest — we build, scale, and transform businesses.
+              </p>
+              <p>
+                Our services are designed for Minnesota companies that are ready to grow, transition, or find the right partner for the next chapter.
+              </p>
+              <ServicesHyperlinkSentence />
+              <p>
+                We work with businesses doing over $1 million in annual sales — companies that form the backbone of Minnesota&apos;s economy. The manufacturers, service providers, and local businesses that keep our communities strong.
+              </p>
+              <p>
+                Our approach is hands-on, patient, and built for the long term. We&apos;re not looking for quick exits or flashy headlines. We&apos;re looking to build something that lasts.
+              </p>
+            </div>
           </div>
         </Container>
       </Section>
 
-      {/* Services List */}
+      {/* Services Cards Grid */}
       <Section spacing="xl" className="bg-zinc-50">
-        <Container size="md">
-          <div className="max-w-4xl mx-auto space-y-12">
-            {services.map((service, index) => (
-              <div key={index} className="border-l-4 border-black pl-8">
-                <Text as="h3" variant="subheading" className="mb-4 text-2xl md:text-3xl">
-                  {service.title}
-                </Text>
-                <Text variant="body" className="text-gray-600 text-lg md:text-xl leading-relaxed">
-                  {service.description}
-                </Text>
-              </div>
-            ))}
+        <Container size="lg">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => (
+                <ServiceCard
+                  key={service.slug}
+                  title={service.title}
+                  href={`/services/${service.slug}`}
+                  color={service.color}
+                  shape={service.shape}
+                />
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
     </>
   );
 }
-

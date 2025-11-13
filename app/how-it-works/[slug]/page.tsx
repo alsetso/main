@@ -231,7 +231,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       type: 'hero' | 'section' | 'subsection';
       title?: string;
       subtitle?: string;
-      content: Array<{ type: 'paragraph' | 'list' | 'emphasis'; text: string; items?: string[] }>;
+      content: Array<{ type: 'paragraph' | 'list' | 'emphasis' | 'subsection'; text: string; items?: string[] }>;
     }> = [];
 
     let currentSection: typeof sections[0] | null = null;
@@ -472,21 +472,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                       <ServiceCard
                         title="Acquisition"
                         description="Acquire established Minnesota businesses through joint-venture partnerships with qualified capital partners for long-term success."
-                        href="/acquisition"
+                        href="/services/acquisition"
                         color="blue"
                         shape="triangle"
                       />
                       <ServiceCard
                         title="Equity"
                         description="Take meaningful equity positions in Minnesota businesses, providing capital and strategic support while you retain control and grow."
-                        href="/equity"
+                        href="/services/equity"
                         color="yellow"
                         shape="diamond"
                       />
                       <ServiceCard
                         title="Transition"
                         description="Navigate complex transitions—ownership succession, operational restructuring, leadership changes—with capital and expertise."
-                        href="/transition"
+                        href="/services/transition"
                         color="purple"
                         shape="plus"
                       />
@@ -507,14 +507,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     color: 'green',
                     className: 'bg-green-500',
                     label: 'Lending',
-                    href: '/lending',
+                    href: '/services/lending',
                   },
                   {
                     type: 'circle',
                     color: 'red',
                     className: 'bg-red-500',
                     label: 'Scale',
-                    href: '/scale',
+                    href: '/services/scale',
                   },
                 ]}
               />

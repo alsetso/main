@@ -54,24 +54,24 @@ export function ServiceShapesNavigation({
               }}
               className="flex flex-col items-center justify-end relative group"
             >
-              <Link href={service.href} className="flex flex-col items-center justify-end">
+              <Link href={service.href} className="flex flex-col items-center justify-end touch-manipulation">
                 {service.type === 'triangle' && (
                   <div
-                    className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} cursor-pointer transition-transform duration-200 group-hover:scale-110`}
+                    className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} cursor-pointer transition-transform duration-200 group-hover:scale-110 active:scale-105`}
                     style={{
                       clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
                     }}
                   />
                 )}
                 {service.type === 'square' && (
-                  <div className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} cursor-pointer transition-transform duration-200 group-hover:scale-110`} />
+                  <div className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} cursor-pointer transition-transform duration-200 group-hover:scale-110 active:scale-105`} />
                 )}
                 {service.type === 'circle' && (
-                  <div className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} rounded-full cursor-pointer transition-transform duration-200 group-hover:scale-110`} />
+                  <div className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} rounded-full cursor-pointer transition-transform duration-200 group-hover:scale-110 active:scale-105`} />
                 )}
                 {service.type === 'diamond' && (
                   <div
-                    className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} cursor-pointer transition-transform duration-200 group-hover:scale-110`}
+                    className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} cursor-pointer transition-transform duration-200 group-hover:scale-110 active:scale-105`}
                     style={{
                       clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
                     }}
@@ -79,7 +79,7 @@ export function ServiceShapesNavigation({
                 )}
                 {service.type === 'plus' && (
                   <div
-                    className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} relative cursor-pointer transition-transform duration-200 group-hover:scale-110`}
+                    className={`w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 ${service.className} relative cursor-pointer transition-transform duration-200 group-hover:scale-110 active:scale-105`}
                     style={{
                       clipPath: 'polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)',
                     }}

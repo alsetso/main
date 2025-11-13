@@ -38,31 +38,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/acquisition`,
+      url: `${baseUrl}/services/acquisition`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/lending`,
+      url: `${baseUrl}/services/lending`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/scale`,
+      url: `${baseUrl}/services/scale`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/equity`,
+      url: `${baseUrl}/services/equity`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/transition`,
+      url: `${baseUrl}/services/transition`,
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -72,6 +72,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: monthlyDate,
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/how-it-works/joint-ventures`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/how-it-works/inhouse-growth-team`,
+      lastModified: monthlyDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
   ];
 }

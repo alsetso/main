@@ -115,7 +115,7 @@ export function OtherServicesSection({
           {otherServices.map((service) => (
             <Link
               key={service.slug}
-              href={`/${service.slug}`}
+              href={`/services/${service.slug}`}
               className="group flex items-center gap-3 p-4 rounded-lg border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all"
             >
               {getShapeElement(service.shape, service.color)}

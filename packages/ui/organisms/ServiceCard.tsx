@@ -5,7 +5,7 @@ import { Text } from '../atoms/Text';
 
 export interface ServiceCardProps {
   title: string;
-  description: string;
+  description?: string;
   href: string;
   color: 'blue' | 'green' | 'red' | 'yellow' | 'purple';
   shape: 'triangle' | 'square' | 'circle' | 'diamond' | 'plus';
@@ -103,9 +103,11 @@ export function ServiceCard({
           <Text as="h3" variant="subheading" className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">
             {title}
           </Text>
+          {description && (
           <Text variant="body" className="text-sm text-gray-600 leading-relaxed">
             {description}
           </Text>
+          )}
         </div>
         <div className="mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
           <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

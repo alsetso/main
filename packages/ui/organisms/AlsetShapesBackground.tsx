@@ -37,7 +37,7 @@ export function AlsetShapesBackground({
       className: 'bg-blue-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Acquisition',
-      href: '/acquisition',
+      href: '/services/acquisition',
     },
     {
       type: 'square',
@@ -45,7 +45,7 @@ export function AlsetShapesBackground({
       className: 'bg-green-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Lending',
-      href: '/lending',
+      href: '/services/lending',
     },
     {
       type: 'circle',
@@ -53,7 +53,7 @@ export function AlsetShapesBackground({
       className: 'bg-red-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Scale',
-      href: '/scale',
+      href: '/services/scale',
     },
     {
       type: 'diamond',
@@ -61,7 +61,7 @@ export function AlsetShapesBackground({
       className: 'bg-yellow-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Equity',
-      href: '/equity',
+      href: '/services/equity',
     },
     {
       type: 'plus',
@@ -69,7 +69,7 @@ export function AlsetShapesBackground({
       className: 'bg-purple-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Transition',
-      href: '/transition',
+      href: '/services/transition',
     },
   ];
   
@@ -176,25 +176,30 @@ export function AlsetShapesBackground({
               className="flex flex-col items-center justify-end relative group"
               onMouseEnter={() => handleShapeHover(index)}
               onMouseLeave={() => handleShapeHover(null)}
+              onTouchStart={() => handleShapeHover(index)}
+              onTouchEnd={() => {
+                // Delay clearing to allow tap to register
+                setTimeout(() => handleShapeHover(null), 300);
+              }}
             >
-              <Link href={shape.href} className="flex flex-col items-center justify-end">
+              <Link href={shape.href} className="flex flex-col items-center justify-end touch-manipulation">
                 {shape.type === 'triangle' && (
                   <div
-                    className={`${shape.size} ${shape.className} cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'}`}
+                    className={`${shape.size} ${shape.className} cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'} active:scale-105`}
                     style={{
                       clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)',
                     }}
                   />
                 )}
                 {shape.type === 'square' && (
-                  <div className={`${shape.size} ${shape.className} cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'}`} />
+                  <div className={`${shape.size} ${shape.className} cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'} active:scale-105`} />
                 )}
                 {shape.type === 'circle' && (
-                  <div className={`${shape.size} ${shape.className} rounded-full cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'}`} />
+                  <div className={`${shape.size} ${shape.className} rounded-full cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'} active:scale-105`} />
                 )}
                 {shape.type === 'diamond' && (
                   <div
-                    className={`${shape.size} ${shape.className} cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'}`}
+                    className={`${shape.size} ${shape.className} cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'} active:scale-105`}
                     style={{
                       clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)',
                     }}
@@ -202,13 +207,13 @@ export function AlsetShapesBackground({
                 )}
                 {shape.type === 'plus' && (
                   <div
-                    className={`${shape.size} ${shape.className} relative cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'}`}
+                    className={`${shape.size} ${shape.className} relative cursor-pointer transition-transform duration-200 ${isHovered(index) ? 'scale-110' : 'group-hover:scale-110'} active:scale-105`}
                     style={{
                       clipPath: 'polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%)',
                     }}
                   />
                 )}
-                {/* Hover Label */}
+                {/* Hover/Touch Label - Show on mobile too */}
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{
@@ -216,12 +221,18 @@ export function AlsetShapesBackground({
                     y: isHovered(index) ? 0 : -10,
                   }}
                   transition={{ duration: 0.2 }}
-                  className="absolute -bottom-6 md:-bottom-8 lg:-bottom-10 whitespace-nowrap pointer-events-none"
+                  className="absolute -bottom-6 md:-bottom-8 lg:-bottom-10 whitespace-nowrap pointer-events-none md:block"
                 >
                   <Text variant="caption" className="text-xs md:text-sm font-medium text-black">
                     {shape.label}
                   </Text>
                 </motion.div>
+                {/* Mobile: Always show label below shape */}
+                <div className="mt-2 md:hidden">
+                  <Text variant="caption" className="text-xs font-medium text-black">
+                    {shape.label}
+                  </Text>
+                </div>
               </Link>
             </motion.div>
           ))}
