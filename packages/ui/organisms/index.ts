@@ -28,4 +28,6 @@ export * from './ServiceContentSection';
 export * from './OtherServicesSection';
 export * from './ServiceCard';
 export * from './ServicesHyperlinkSentence';
+export * from './JVComparisonBlock';
+export * from './AlsetManifest';
 

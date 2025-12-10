@@ -41,31 +41,31 @@ const colorClasses = {
 const serviceLinks: ServiceLink[] = [
   {
     text: 'sell your business',
-    href: '/services/acquisition',
+    href: '/how-it-works/joint-ventures/acquisition',
     color: 'blue',
     shape: 'triangle',
   },
   {
     text: 'secure financing',
-    href: '/services/lending',
+    href: '/how-it-works/inhouse-growth-team/lending',
     color: 'green',
     shape: 'square',
   },
   {
     text: 'scale operations',
-    href: '/services/scale',
+    href: '/how-it-works/inhouse-growth-team/scale',
     color: 'red',
     shape: 'circle',
   },
   {
     text: 'give up equity for growth',
-    href: '/services/equity',
+    href: '/how-it-works/joint-ventures/equity',
     color: 'yellow',
     shape: 'diamond',
   },
   {
     text: 'navigate a transition',
-    href: '/services/transition',
+    href: '/how-it-works/joint-ventures/transition',
     color: 'purple',
     shape: 'plus',
   },

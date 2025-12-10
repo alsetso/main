@@ -26,20 +26,7 @@ const services = [
     description: "Acquire your business with a partner who understands Minnesota values and will preserve what you've built. We acquire businesses with respect for their legacy and a clear vision for their future.",
     color: 'blue' as const,
     shape: 'triangle' as const,
-  },
-  {
-    slug: 'lending',
-    title: 'Lending',
-    description: 'Strategic business financing that supports growth without compromising your vision. We provide capital solutions tailored to your specific needs and timeline.',
-    color: 'green' as const,
-    shape: 'square' as const,
-  },
-  {
-    slug: 'scale',
-    title: 'Scale',
-    description: 'Growth partnerships that combine capital with operational expertise. We help you scale efficiently, sustainably, and with the right technology infrastructure.',
-    color: 'red' as const,
-    shape: 'circle' as const,
+    href: '/how-it-works/joint-ventures/acquisition',
   },
   {
     slug: 'equity',
@@ -47,6 +34,7 @@ const services = [
     description: 'Equity investment for businesses ready to accelerate. We take meaningful positions and provide strategic guidance to help you reach the next level.',
     color: 'yellow' as const,
     shape: 'diamond' as const,
+    href: '/how-it-works/joint-ventures/equity',
   },
   {
     slug: 'transition',
@@ -54,6 +42,7 @@ const services = [
     description: "Navigate business transitions with confidence. Whether it's leadership changes, ownership transfers, or strategic pivots, we provide the support and capital to make it smooth.",
     color: 'purple' as const,
     shape: 'plus' as const,
+    href: '/how-it-works/joint-ventures/transition',
   },
 ];
 
@@ -108,7 +97,7 @@ export default function ServicesPage() {
                 <ServiceCard
                   key={service.slug}
                   title={service.title}
-                  href={`/services/${service.slug}`}
+                  href={service.href}
                   color={service.color}
                   shape={service.shape}
                 />

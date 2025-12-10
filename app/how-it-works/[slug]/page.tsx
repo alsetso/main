@@ -472,21 +472,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                       <ServiceCard
                         title="Acquisition"
                         description="Acquire established Minnesota businesses through joint-venture partnerships with qualified capital partners for long-term success."
-                        href="/services/acquisition"
+                        href="/how-it-works/joint-ventures/acquisition"
                         color="blue"
                         shape="triangle"
                       />
                       <ServiceCard
                         title="Equity"
                         description="Take meaningful equity positions in Minnesota businesses, providing capital and strategic support while you retain control and grow."
-                        href="/services/equity"
+                        href="/how-it-works/joint-ventures/equity"
                         color="yellow"
                         shape="diamond"
                       />
                       <ServiceCard
                         title="Transition"
                         description="Navigate complex transitions—ownership succession, operational restructuring, leadership changes—with capital and expertise."
-                        href="/services/transition"
+                        href="/how-it-works/joint-ventures/transition"
                         color="purple"
                         shape="plus"
                       />
@@ -507,14 +507,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                     color: 'green',
                     className: 'bg-green-500',
                     label: 'Lending',
-                    href: '/services/lending',
+                    href: '/how-it-works/inhouse-growth-team/lending',
                   },
                   {
                     type: 'circle',
                     color: 'red',
                     className: 'bg-red-500',
                     label: 'Scale',
-                    href: '/services/scale',
+                    href: '/how-it-works/inhouse-growth-team/scale',
                   },
                 ]}
               />

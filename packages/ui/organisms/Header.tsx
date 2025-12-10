@@ -10,27 +10,27 @@ import { navigationLinks, navigationGroups, routes } from '@alset/config/routes'
 
 // Shape mapping for services
 const serviceShapes: Record<string, { type: 'triangle' | 'square' | 'circle' | 'diamond' | 'plus'; color: string; className: string }> = {
-  '/services/acquisition': {
+  '/how-it-works/joint-ventures/acquisition': {
     type: 'triangle',
     color: 'blue',
     className: 'bg-blue-500',
   },
-  '/services/lending': {
+  '/how-it-works/inhouse-growth-team/lending': {
     type: 'square',
     color: 'green',
     className: 'bg-green-500',
   },
-  '/services/scale': {
+  '/how-it-works/inhouse-growth-team/scale': {
     type: 'circle',
     color: 'red',
     className: 'bg-red-500',
   },
-  '/services/equity': {
+  '/how-it-works/joint-ventures/equity': {
     type: 'diamond',
     color: 'yellow',
     className: 'bg-yellow-500',
   },
-  '/services/transition': {
+  '/how-it-works/joint-ventures/transition': {
     type: 'plus',
     color: 'purple',
     className: 'bg-purple-500',

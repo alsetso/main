@@ -37,7 +37,7 @@ export function AlsetShapesBackground({
       className: 'bg-blue-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Acquisition',
-      href: '/services/acquisition',
+      href: '/how-it-works/joint-ventures/acquisition',
     },
     {
       type: 'square',
@@ -45,7 +45,7 @@ export function AlsetShapesBackground({
       className: 'bg-green-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Lending',
-      href: '/services/lending',
+      href: '/how-it-works/inhouse-growth-team/lending',
     },
     {
       type: 'circle',
@@ -53,7 +53,7 @@ export function AlsetShapesBackground({
       className: 'bg-red-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Scale',
-      href: '/services/scale',
+      href: '/how-it-works/inhouse-growth-team/scale',
     },
     {
       type: 'diamond',
@@ -61,7 +61,7 @@ export function AlsetShapesBackground({
       className: 'bg-yellow-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Equity',
-      href: '/services/equity',
+      href: '/how-it-works/joint-ventures/equity',
     },
     {
       type: 'plus',
@@ -69,7 +69,7 @@ export function AlsetShapesBackground({
       className: 'bg-purple-500',
       size: 'w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36',
       label: 'Transition',
-      href: '/services/transition',
+      href: '/how-it-works/joint-ventures/transition',
     },
   ];
   

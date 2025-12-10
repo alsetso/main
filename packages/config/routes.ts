@@ -16,29 +16,29 @@ export const routes = {
     label: 'Invest',
   },
   acquisition: {
-    path: '/services/acquisition',
+    path: '/how-it-works/joint-ventures/acquisition',
     label: 'Acquisition',
-    description: 'Acquire your business',
+    description: 'Sell with stability.',
   },
   lending: {
-    path: '/services/lending',
+    path: '/how-it-works/inhouse-growth-team/lending',
     label: 'Lending',
     description: 'Business financing',
   },
   scale: {
-    path: '/services/scale',
+    path: '/how-it-works/inhouse-growth-team/scale',
     label: 'Scale',
     description: 'Growth partnership',
   },
   equity: {
-    path: '/services/equity',
+    path: '/how-it-works/joint-ventures/equity',
     label: 'Equity',
-    description: 'Equity investment',
+    description: 'Grow with alignment.',
   },
   transition: {
-    path: '/services/transition',
+    path: '/how-it-works/joint-ventures/transition',
     label: 'Transition',
-    description: 'Business transition',
+    description: 'Exit with intention.',
   },
   services: {
     path: '/services',
@@ -63,6 +63,7 @@ export const navigationGroups = {
   main: [
     routes.home,
     routes.about,
+    routes.howItWorks,
   ],
   services: [
     routes.acquisition,
