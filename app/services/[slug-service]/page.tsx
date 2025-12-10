@@ -9,7 +9,7 @@ import { Container, Text } from '@alset/ui/atoms';
 // This file is now empty - lending and scale have been moved to /growth-team
 type ServiceSlug = never;
 
-const services: Record<ServiceSlug, {
+type Service = {
   title: string;
   description: string;
   content: string;
@@ -26,12 +26,14 @@ const services: Record<ServiceSlug, {
     color: 'blue' | 'green' | 'red' | 'yellow' | 'purple';
     shape: 'triangle' | 'square' | 'circle' | 'diamond' | 'plus';
   }>;
-}> = {};
+};
+
+const services: Record<ServiceSlug, Service> = {} as Record<ServiceSlug, Service>;
 
 const serviceHeroConfig: Record<ServiceSlug, {
   heroTitle: string;
   heroDescription: string;
-}> = {};
+}> = {} as Record<ServiceSlug, { heroTitle: string; heroDescription: string }>;
 
 export async function generateStaticParams() {
   return Object.keys(services).map((slug) => ({
@@ -41,7 +43,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ 'slug-service': string }> }): Promise<Metadata> {
   const { 'slug-service': slug } = await params;
-  const service = services[slug as ServiceSlug];
+  const service: Service | undefined = services[slug as ServiceSlug];
   
   if (!service) {
     return generatePageMetadata({
@@ -51,12 +53,15 @@ export async function generateMetadata({ params }: { params: Promise<{ 'slug-ser
     });
   }
 
+  // Type assertion needed because ServiceSlug is 'never' but service exists after null check
+  const validService = service as Service;
+
   return generatePageMetadata({
-    title: service.title,
-    description: service.description,
+    title: validService.title,
+    description: validService.description,
     path: `/services/${slug}`,
     keywords: [
-      ...service.keywords,
+      ...validService.keywords,
       'Minnesota business',
       'Alset Solutions',
     ],
@@ -65,17 +70,28 @@ export async function generateMetadata({ params }: { params: Promise<{ 'slug-ser
 
 export default async function ServicePage({ params }: { params: Promise<{ 'slug-service': string }> }) {
   const { 'slug-service': slug } = await params;
-  const service = services[slug as ServiceSlug];
+  const service: Service | undefined = services[slug as ServiceSlug];
 
   if (!service) {
     notFound();
   }
 
-  const heroConfig = serviceHeroConfig[slug as ServiceSlug];
+  // Type assertion needed because ServiceSlug is 'never' but service exists after null check
+  const validService = service as Service;
+
+  const heroConfig: { heroTitle: string; heroDescription: string } | undefined = serviceHeroConfig[slug as ServiceSlug];
+  
+  if (!heroConfig) {
+    notFound();
+  }
+  
+  // Type assertion needed because ServiceSlug is 'never' but heroConfig exists after null check
+  const validHeroConfig = heroConfig as { heroTitle: string; heroDescription: string };
+  
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: siteConfig.url },
     { name: 'Services', url: `${siteConfig.url}/services` },
-    { name: service.title.split(' — ')[0], url: `${siteConfig.url}/services/${slug}` },
+    { name: validService.title.split(' — ')[0], url: `${siteConfig.url}/services/${slug}` },
   ]);
 
   return (
@@ -88,23 +104,23 @@ export default async function ServicePage({ params }: { params: Promise<{ 'slug-
       />
 
       <ServiceHero
-        title={heroConfig.heroTitle}
-        description={heroConfig.heroDescription}
+        title={validHeroConfig.heroTitle}
+        description={validHeroConfig.heroDescription}
         service={slug as ServiceSlug}
       />
 
       <ServiceContentSection
-        description={service.content}
-        contextLink={service.contextLink}
+        description={validService.content}
+        contextLink={validService.contextLink}
       />
 
       {/* JV Comparison Block - Only for Joint-Venture services */}
-      {service.relatedServices && service.relatedServices.length > 0 && (
+      {validService.relatedServices && validService.relatedServices.length > 0 && (
         <JVComparisonBlock />
       )}
 
       {/* Related Services - Only for Joint-Venture services */}
-      {service.relatedServices && service.relatedServices.length > 0 && (
+      {validService.relatedServices && validService.relatedServices.length > 0 && (
         <Section spacing="xl" className="bg-white">
           <Container size="lg">
             <div className="max-w-6xl mx-auto">
@@ -112,7 +128,7 @@ export default async function ServicePage({ params }: { params: Promise<{ 'slug-
                 Other Joint-Venture Services
               </Text>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {service.relatedServices.map((related) => (
+                {validService.relatedServices.map((related) => (
                   <ServiceCard
                     key={related.href}
                     title={related.title}
